@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1f7a4d"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
+<title>EPS-TOPIK Vocabulary Notebook</title>
+<style>
+:root{--bg:#f3eeb9;--rule:rgba(46,125,87,.16);--paper:#fffdf1;--paper2:#f8f5dc;--ink:#1d2a22;--muted:#68725f;--line:#d6d9b0;--accent:#1f7a4d;--onacc:#fff;--red:#c0392b;--good:#1f7a4d;--goodbg:#e2f4e8;--bad:#b3261e;--badbg:#fdeaea;--shadow:0 6px 20px rgba(60,70,20,.12)}
+:root[data-theme=dark]{--bg:#141d18;--rule:rgba(111,208,155,.06);--paper:#1e2b24;--paper2:#26352c;--ink:#eef3e6;--muted:#9fb0a2;--line:#35493d;--accent:#6fd09b;--onacc:#0f1e16;--red:#ff8a7a;--good:#6fd09b;--goodbg:#1f3a2b;--bad:#ff8f86;--badbg:#3a2220;--shadow:0 6px 20px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background-color:var(--bg);background-image:repeating-linear-gradient(transparent 0 33px,var(--rule) 33px 34px);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh}
+main{max-width:720px;margin:0 auto;padding:18px 14px 40px}
+header{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.eyebrow{margin:0;font-size:.75rem;letter-spacing:.18em;font-weight:700;color:var(--accent)}
+h1{margin:2px 0 0;font:700 clamp(1.5rem,5vw,2.1rem)/1.15 Georgia,"Iowan Old Style",serif}
+h2{margin:0 0 10px;font:700 1.15rem Georgia,serif}
+.kr{font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic","Nanum Gothic",sans-serif}
+.small{font-size:.86rem;color:var(--muted)}
+button,select,input{font:inherit;color:var(--ink)}
+button{min-height:44px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:var(--paper2);font-weight:650;cursor:pointer;transition:transform .08s,filter .15s}
+button:hover:not(:disabled){filter:brightness(.97)}button:active:not(:disabled){transform:scale(.97)}
+button:disabled{opacity:.4;cursor:not-allowed}
+button.primary{background:var(--accent);color:var(--onacc);border-color:var(--accent)}
+button.good{background:var(--goodbg);color:var(--good);border-color:var(--good)}
+button.bad{background:var(--badbg);color:var(--bad);border-color:var(--bad)}
+button.icon{width:44px;padding:0;font-size:1.2rem;border-radius:50%}
+:is(button,select,input,summary):focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+select,input[type=text],input[type=search]{width:100%;min-height:44px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--paper)}
+label{display:block;font-weight:650;font-size:.88rem;margin:0 0 5px}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:16px 0 12px;background:var(--paper2);padding:5px;border-radius:15px;border:1px solid var(--line)}
+.tabs button{border:0;background:transparent;min-height:42px}
+.tabs button.on{background:var(--paper);box-shadow:var(--shadow);color:var(--accent)}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:var(--shadow)}
+.grid{display:grid;gap:10px;grid-template-columns:1fr 1fr}.grid .full{grid-column:1/-1}
+.check{display:flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem;margin:0;min-height:40px}.check input{width:20px;height:20px;accent-color:var(--accent)}
+.card{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);margin:12px 0;min-height:320px;padding:20px 18px 20px 46px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.card::before{content:"";position:absolute;left:28px;top:0;bottom:0;width:2px;background:var(--red);opacity:.4}
+.card.pop #cardBody{animation:pop .25s ease}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.count{position:absolute;top:12px;right:16px;font-size:.82rem;color:var(--muted);font-weight:600}
+.chip{display:inline-block;padding:4px 12px;border-radius:99px;background:var(--paper2);border:1px solid var(--line);font-size:.82rem;color:var(--muted);font-weight:600}
+.front{font-size:clamp(2.2rem,9vw,3.4rem);font-weight:800;margin:16px 0 12px;line-height:1.2;overflow-wrap:anywhere}
+.front.en{font-family:Georgia,serif;font-size:clamp(1.8rem,7vw,2.6rem)}
+.answer{font-size:clamp(1.3rem,5vw,1.7rem);font-weight:700;color:var(--accent);margin-top:14px;overflow-wrap:anywhere}
+.fb{min-height:26px;margin-top:10px;font-weight:700}.fb.good{color:var(--good)}.fb.bad{color:var(--bad)}
+.hint{color:var(--muted);font-size:.9rem;margin-top:8px}
+.choices{display:grid;gap:8px;width:100%;margin-top:12px}.choices button{text-align:left;background:var(--paper)}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.actions .wide{grid-column:1/-1}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat{background:var(--paper2);border-radius:14px;padding:10px;text-align:center}.stat b{display:block;font-size:1.4rem;font-family:Georgia,serif}.stat span{font-size:.8rem;color:var(--muted)}
+.bar{height:8px;background:var(--paper2);border:1px solid var(--line);border-radius:99px;overflow:hidden;margin:12px 0 4px}.bar div{height:100%;width:0;background:var(--accent);transition:width .25s}
+.row{display:flex;gap:8px;flex-wrap:wrap}.row>*{flex:1 1 130px}
+.list{display:grid;gap:8px;max-height:340px;overflow:auto;margin-top:10px;padding-right:2px}
+.item{display:flex;align-items:center;gap:8px;flex-wrap:wrap;border:1px solid var(--line);border-radius:14px;padding:9px 10px;background:var(--paper)}
+.item .info{flex:1 1 140px;min-width:0;overflow-wrap:anywhere}.item button{min-height:38px;padding:6px 12px;font-size:.88rem}
+.sep{border:0;border-top:1px dashed var(--line);margin:16px 0}
+dialog{border:1px solid var(--line);border-radius:18px;background:var(--paper);color:var(--ink);padding:20px;max-width:min(92vw,380px);box-shadow:var(--shadow)}
+dialog::backdrop{background:rgba(0,0,0,.45)}dialog p{margin:0 0 16px;line-height:1.45}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(30px);background:var(--ink);color:var(--paper);padding:11px 18px;border-radius:99px;font-size:.9rem;max-width:90vw;opacity:0;pointer-events:none;transition:.25s;z-index:50;text-align:center}
+#toast.on{opacity:1;transform:translateX(-50%)}
+footer{text-align:center;color:var(--muted);font-size:.8rem;margin-top:18px}
+.star{position:absolute;top:6px;left:36px;width:42px;min-height:42px;padding:0;font-size:1.5rem;border:0;border-radius:50%;background:transparent;color:var(--red)}
+.timer{font-weight:800;color:var(--red);margin-top:8px}
+.front.sm{font-size:1.5rem}
+.typeform{display:flex;gap:8px;width:100%;margin-top:12px}.typeform input{flex:1;min-width:0}
+.board{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;margin-top:12px}.board>div{display:grid;gap:8px;align-content:start}.board button:disabled{opacity:.7}
+[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<header>
+ <div><p class="eyebrow">EPS-TOPIK</p><h1>Vocabulary Notebook</h1></div>
+ <button id="theme" class="icon" aria-label="Toggle dark mode">🌙</button>
+</header>
+<nav class="tabs" aria-label="Sections"><button class="on" data-tab="study">📖 Study</button><button data-tab="manage">⚙️ Manage</button></nav>
+
+<section id="study">
+ <div class="panel grid">
+  <div class="full"><label for="fCat">Category</label><select id="fCat"></select></div>
+  <div><label for="fDir">Direction</label><select id="fDir"><option value="ko-en">Korean → English</option><option value="en-ko">English → Korean</option></select></div>
+  <div><label for="fMode">Mode</label><select id="fMode"><option value="flash">🃏 Flashcards</option><option value="smart">🧠 Smart review (spaced)</option><option value="quiz">❓ 4-choice quiz</option><option value="listen">🎧 Listening</option><option value="type">⌨️ Typing</option><option value="exam">⏱ Timed exam</option><option value="match">🧩 Matching game</option></select></div>
+  <label class="check"><input type="checkbox" id="fReview"> Review missed only</label>
+  <label class="check"><input type="checkbox" id="fAuto"> Auto-play sound</label>
+  <label class="check"><input type="checkbox" id="fFav"> ⭐ Starred only</label>
+ </div>
+
+ <div class="card" id="card">
+  <span class="count" id="count">0 / 0</span>
+  <div id="cardBody">
+   <button id="star" class="star" aria-label="Star this word">☆</button>
+   <span class="chip" id="chip"></span>
+   <div class="timer" id="timer" hidden></div>
+   <div class="front kr" id="front"></div>
+   <button id="speak" aria-label="Hear Korean pronunciation">🔊 Hear Korean</button>
+   <div class="answer kr" id="answer" hidden></div>
+   <form id="typeForm" class="typeform" autocomplete="off" hidden><input type="text" id="typeIn" aria-label="Your answer" autocapitalize="none" spellcheck="false"><button class="primary" id="typeGo" type="submit">Check</button></form>
+   <div class="board" id="board" hidden></div>
+   <div class="fb" id="fb" aria-live="polite"></div>
+   <div class="choices" id="choices" hidden></div>
+   <div class="hint" id="hint"></div>
+  </div>
+  <div id="empty" hidden><p style="font-size:2rem;margin:0">📝</p><p id="emptyMsg" class="small" style="max-width:260px"></p></div>
+ </div>
+
+ <div class="actions" id="flashActions">
+  <button id="flip" class="primary wide">Show answer</button>
+  <button id="prev">← Previous</button><button id="next">Next →</button>
+  <button id="bad" class="bad">Need practice</button><button id="good" class="good">✓ I know it</button>
+ </div>
+ <div class="actions" id="quizActions" hidden><button id="nextQ" class="primary wide">Next question →</button></div>
+
+ <div class="panel">
+  <div class="stats"><div class="stat"><b id="score">0</b><span>Score</span></div><div class="stat"><b id="known">0</b><span>Known</span></div><div class="stat"><b id="missed">0</b><span>Review</span></div></div>
+  <div class="bar"><div id="bar"></div></div><div class="small" id="progText"></div>
+  <div class="row" style="margin-top:12px"><button id="shuffle">🔀 Shuffle</button><button id="reset">↻ Reset progress</button></div>
+ </div>
+ <p class="small" style="text-align:center">Shortcuts: ← → to move, Space to flip.</p>
+</section>
+
+<section id="manage" hidden>
+ <div class="panel">
+  <h2>Categories</h2>
+  <form id="catForm" class="row" style="align-items:stretch" autocomplete="off">
+   <input type="text" id="catInput" maxlength="40" placeholder="New category name" aria-label="Category name" style="flex:3 1 180px">
+   <button class="primary" id="catSave" type="submit">＋ Add</button><button type="button" id="catCancel" hidden>Cancel</button>
+  </form>
+  <div class="list" id="catList"></div>
+ </div>
+
+ <div class="panel">
+  <h2>Words</h2>
+  <form id="wordForm" autocomplete="off">
+   <div class="grid">
+    <div><label for="wKo">Korean</label><input type="text" id="wKo" class="kr" maxlength="100" placeholder="예: 책"></div>
+    <div><label for="wEn">English</label><input type="text" id="wEn" maxlength="150" placeholder="Book"></div>
+    <div class="full"><label for="wCat">Category</label><select id="wCat"></select></div>
+   </div>
+   <div class="row" style="margin-top:10px"><button class="primary" id="wSave" type="submit">＋ Add word</button><button type="button" id="wCancel" hidden>Cancel edit</button></div>
+  </form>
+  <hr class="sep">
+  <div class="grid"><div><label for="wSearch">Search</label><input type="search" id="wSearch" placeholder="Korean or English…"></div><div><label for="wFilter">Show</label><select id="wFilter"></select></div></div>
+  <div class="list" id="wordList"></div>
+ </div>
+
+ <div class="panel">
+  <h2>Backup &amp; reset</h2>
+  <p class="small" id="storeNote">Everything is saved automatically in this browser. Export a backup file to keep it safe or move it to another device.</p>
+  <div class="row"><button id="export">⬇ Export backup</button><button id="importBtn">⬆ Import backup</button><button id="install" hidden>📲 Install app</button><button id="defaults" class="bad">Restore default list</button></div>
+  <input type="file" id="importFile" accept=".json,application/json" hidden>
+ </div>
+</section>
+<footer>Sound uses your device's text-to-speech. If Korean audio is missing, enable a Korean voice in your phone's settings.</footer>
+</main>
+
+<dialog id="dlg"><p id="dlgMsg"></p><div class="row"><button id="dlgNo" type="button">Cancel</button><button id="dlgYes" type="button" class="primary">Confirm</button></div></dialog>
+<div id="toast" role="status"></div>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const KEY="epsTopikNotebook.v2";
+// Source: the handwritten list (image). Categories keep the names written on it.
+const DEF=[
+["Electric appliances",[["에어컨","Air conditioner"],["텔레비전","Television"],["냉장고","Refrigerator"],["전자레인지","Microwave"],["세탁기","Washer"],["청소기","Vacuum cleaner"],["컴퓨터","Computer"]]],
+["Furniture",[["침대","Bed"],["베개","Pillow"],["이불","Blanket"],["옷장","Closet"],["소파","Sofa"],["식탁","Table"],["의자","Chair"],["책상","Desk"]]],
+["Personal item",[["달력","Calendar"],["지갑","Wallet"],["여권","Passport"],["열쇠","Key"],["우산","Umbrella"],["휴대폰 / 휴대전화","Cell phone"],["안경","Glasses"],["가족사진","Family picture"],["시계","Clock / watch"]]],
+["Personal care",[["화장품","Cosmetics / skincare"],["거울","Mirror"],["빗","Brush"],["휴지","Toilet paper"]]],
+["School supplies",[["연필","Pencil"],["볼펜","Ballpoint pen"],["가위","Scissors"],["칼","Box cutter"],["계산기","Calculator"],["가방","Bag"],["컵","Cup"]]]
+];
+let uid=0;const nid=()=>"w"+Date.now().toString(36)+(uid++).toString(36);
+const defaults=()=>({cats:DEF.map(c=>c[0]),cards:DEF.flatMap(([c,l])=>l.map(([ko,en])=>({id:nid(),ko,en,cat:c}))),status:{},fav:{},srs:{}});
+
+// Validates any data (saved, imported) so a bad file can never break the app.
+function clean(o){
+ if(!o||typeof o!=="object"||!Array.isArray(o.cards))return null;
+ const cats=[],add=c=>{c=String(c==null?"":c).trim().slice(0,40);if(c&&!cats.includes(c))cats.push(c);return c};
+ (Array.isArray(o.cats)?o.cats:[]).forEach(add);
+ const seen=new Set(),cards=[];
+ for(const w of o.cards){
+  if(!w||typeof w.ko!=="string"||typeof w.en!=="string")continue;
+  const ko=w.ko.trim().slice(0,100),en=w.en.trim().slice(0,150),cat=add(w.cat);
+  if(!ko||!en||!cat)continue;
+  let id=typeof w.id==="string"&&w.id&&!seen.has(w.id)?w.id:nid();seen.add(id);cards.push({id,ko,en,cat});
+ }
+ const status={};
+ if(o.status&&typeof o.status==="object")for(const k of seen)if(o.status[k]==="known"||o.status[k]==="missed")status[k]=o.status[k];
+ const fav={},srs={};
+ if(o.fav&&typeof o.fav==="object")for(const k of seen)if(o.fav[k])fav[k]=1;
+ if(o.srs&&typeof o.srs==="object")for(const k of seen){const x=o.srs[k];if(x&&Number.isFinite(x.b)&&Number.isFinite(x.d))srs[k]={b:Math.max(0,Math.min(6,x.b|0)),d:x.d}}
+ return{cats,cards,status,fav,srs};
+}
+let S=null,P={theme:"",dir:"ko-en",mode:"flash",auto:false,review:false,fav:false},storageOK=true;
+try{const r=JSON.parse(localStorage.getItem(KEY)||"null");if(r){S=clean(r.data);if(r.prefs&&typeof r.prefs==="object")Object.assign(P,r.prefs)}}catch(e){}
+if(!S)S=defaults();
+if(!["ko-en","en-ko"].includes(P.dir))P.dir="ko-en";
+if(!["flash","smart","quiz","listen","type","exam","match"].includes(P.mode))P.mode="flash";
+P.auto=!!P.auto;P.review=!!P.review;P.fav=!!P.fav;
+function save(){try{localStorage.setItem(KEY,JSON.stringify({data:S,prefs:P}))}catch(e){if(storageOK){storageOK=false;$("storeNote").textContent="⚠ This browser can't save data. Changes last only while this page is open — use Export backup.";toast("Can't save here — use Export backup.")}}}
+
+let tt;function toast(m){const t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),2600)}
+function ask(msg,yes="Confirm"){
+ const d=$("dlg");if(typeof d.showModal!=="function")return Promise.resolve(confirm(msg));
+ return new Promise(res=>{
+  $("dlgMsg").textContent=msg;$("dlgYes").textContent=yes;
+  const fin=v=>{$("dlgYes").onclick=$("dlgNo").onclick=d.oncancel=null;try{d.close()}catch(e){}res(v)};
+  $("dlgYes").onclick=()=>fin(true);$("dlgNo").onclick=()=>fin(false);d.oncancel=e=>{e.preventDefault();fin(false)};
+  try{d.showModal()}catch(e){res(confirm(msg))}
+ });
+}
+function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+const shuf=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const byId=id=>S.cards.find(w=>w.id===id);
+const same=(a,b)=>a.toLowerCase()===b.toLowerCase();
+
+// ---------- theme ----------
+function applyTheme(){const t=P.theme||(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t;$("theme").textContent=t==="dark"?"☀️":"🌙"}
+$("theme").onclick=()=>{P.theme=document.documentElement.dataset.theme==="dark"?"light":"dark";applyTheme();save()};
+
+// ---------- selects ----------
+function fillSelects(){
+ const fill=(sel,withAll,counts)=>{
+  const cur=sel.value;sel.textContent="";
+  const add=(v,t)=>{const o=el("option",null,t);o.value=v;sel.appendChild(o)};
+  if(withAll)add("All",`All (${S.cards.length})`);
+  S.cats.forEach(c=>add(c,counts?`${c} (${S.cards.filter(w=>w.cat===c).length})`:c));
+  const ok=[...sel.options].some(o=>o.value===cur);
+  sel.value=ok?cur:(withAll?"All":(sel.options[0]?sel.options[0].value:""));
+ };
+ fill($("fCat"),true,true);fill($("wFilter"),true,true);fill($("wCat"),false,false);
+}
+
+// ---------- study ----------
+let deck=[],idx=0,shown=false,locked=false,score=0,done=new Set(),timer=null,tl=0,exam=null,req=new Set();
+const HINT={flash:"Think of the answer first, then flip.",smart:"Smart review: cards come back when they're due.",quiz:"Choose the correct answer.",listen:"Listen, then choose the English meaning.",type:"Type the answer, then press Enter.",exam:"Timed exam: 15 seconds per question.",match:"Tap one word, then its pair."};
+const INT=[0,10*6e4,864e5,3*864e5,7*864e5,14*864e5,30*864e5];
+const cur=()=>deck.length?byId(deck[idx]):null;
+const isFl=()=>P.mode==="flash"||P.mode==="smart";
+const showEn=()=>P.mode==="listen"||P.dir==="ko-en";
+const ans=w=>showEn()?w.en:w.ko;
+function stopTimer(){clearInterval(timer);timer=null}
+function buildDeck(keep){
+ const old=deck[idx],c=$("fCat").value,now=Date.now();
+ let d=S.cards.filter(w=>(c==="All"||w.cat===c)&&(!P.review||S.status[w.id]==="missed")&&(!P.fav||S.fav[w.id]));
+ if(P.mode==="smart")d=d.filter(w=>!S.srs[w.id]||S.srs[w.id].d<=now).sort((a,b)=>(S.srs[a.id]?S.srs[a.id].d:0)-(S.srs[b.id]?S.srs[b.id].d:0));
+ else if(P.mode==="exam")d=shuf(d).slice(0,20);
+ deck=d.map(w=>w.id);req.clear();exam=P.mode==="exam"?{ok:0,over:false}:null;
+ idx=keep&&deck.includes(old)?deck.indexOf(old):0;render();
+}
+function render(){
+ stopTimer();
+ const w=cur(),m=P.mode,fl=isFl(),ch=m==="quiz"||m==="listen"||m==="exam";
+ shown=false;locked=false;
+ $("cardBody").hidden=!w;$("empty").hidden=!!w;
+ $("count").textContent=m==="match"?`${deck.length} words`:`${w?idx+1:0} / ${deck.length}`;
+ $("flashActions").hidden=!fl;$("quizActions").hidden=fl;
+ ["flip","prev","next","bad","good","nextQ"].forEach(i=>$(i).disabled=!w);
+ if(w){$("prev").disabled=idx===0;$("next").disabled=idx>=deck.length-1}
+ $("nextQ").textContent=m==="match"?"New round 🔀":idx<deck.length-1?"Next question →":"Finish ✓";
+ $("flip").textContent="Show answer";
+ ["timer","typeForm","board","choices","answer"].forEach(i=>$(i).hidden=true);
+ if(w){
+  const ko=P.dir==="ko-en";
+  $("chip").textContent=w.cat;$("star").textContent=S.fav[w.id]?"★":"☆";
+  let ft=ko?w.ko:w.en,fk=ko,fc="";
+  if(m==="listen"){ft="🎧";fk=false}else if(m==="match"){ft="Match the pairs";fk=false;fc=" sm"}
+  $("front").textContent=ft;$("front").className="front "+(fk?"kr":"en")+fc;
+  $("answer").textContent=ko?w.en:w.ko;$("answer").className="answer "+(ko?"":"kr");
+  $("speak").hidden=m==="match";$("speak").textContent=m==="listen"?"🔊 Play again":"🔊 Hear Korean";
+  $("fb").textContent="";$("fb").className="fb";$("choices").textContent="";$("board").textContent="";
+  $("hint").textContent=HINT[m];
+  if(ch){$("choices").hidden=false;makeChoices(w);if(m==="exam")startTimer()}
+  else if(m==="type"){$("typeForm").hidden=false;$("typeIn").value="";$("typeIn").disabled=false;$("typeIn").placeholder=ko?"English meaning":"한국어";$("typeGo").textContent="Check"}
+  else if(m==="match"){$("board").hidden=false;startMatch()}
+  const c=$("card");c.classList.remove("pop");void c.offsetWidth;c.classList.add("pop");
+ }else{
+  $("emptyMsg").textContent=!S.cards.length?"Your notebook is empty. Add words in the Manage tab.":m==="smart"?"All caught up! No cards are due right now 🎉 Come back later.":P.fav?"No starred words here yet. Tap ☆ on a card to star it.":P.review?"Nothing to review right now 🎉 Turn off “Review missed only” to see all cards.":"No words in this category yet. Add some in the Manage tab.";
+ }
+ stats();
+}
+function stats(){
+ const k=deck.filter(i=>S.status[i]==="known").length,m=deck.filter(i=>S.status[i]==="missed").length,a=deck.filter(i=>done.has(i)).length;
+ $("score").textContent=score;$("known").textContent=k;$("missed").textContent=m;
+ $("bar").style.width=Math.min(100,deck.length?a/deck.length*100:0)+"%";$("progText").textContent=`${a} of ${deck.length} answered this session`;
+}
+function flip(){if(!isFl()||!cur())return;shown=!shown;$("answer").hidden=!shown;$("flip").textContent=shown?"Hide answer":"Show answer";$("hint").textContent=shown?"Did you remember it? Mark yourself below.":HINT[P.mode]}
+function speak(){
+ const w=cur();if(!w)return;
+ if(!("speechSynthesis" in window)||typeof SpeechSynthesisUtterance==="undefined"){toast("Sound isn't supported in this browser.");return}
+ try{const u=new SpeechSynthesisUtterance(w.ko.split("/")[0].trim());u.lang="ko-KR";u.rate=.8;
+  const v=speechSynthesis.getVoices().find(v=>/^ko/i.test(v.lang));if(v)u.voice=v;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){toast("Couldn't play sound.")}
+}
+function autoSpeak(){if(!cur()||P.mode==="match")return;if(P.mode==="listen"||(P.auto&&P.dir==="ko-en"))speak()}
+function go(n){if(n<0||n>=deck.length)return;idx=n;render();autoSpeak();if(P.mode==="type"){try{$("typeIn").focus({preventScroll:true})}catch(e){}}}
+function advance(){if(idx<deck.length-1)go(idx+1);else finish()}
+function record(id,ok){
+ if(ok&&!done.has(id))score++;done.add(id);S.status[id]=ok?"known":"missed";
+ const s=S.srs[id]||{b:0,d:0};s.b=ok?Math.min(s.b+1,INT.length-1):0;s.d=Date.now()+(ok?INT[s.b]:5*6e4);S.srs[id]=s;save();
+}
+function finish(){
+ stopTimer();
+ if(P.mode==="exam"&&exam){exam.over=true;const p=deck.length?Math.round(exam.ok/deck.length*100):0;$("fb").textContent=`Exam done: ${exam.ok}/${deck.length} correct (${p}%) ${p>=80?"🎉":p>=60?"👍":"💪"}`}
+ else{const k=deck.filter(i=>S.status[i]==="known").length,m=deck.filter(i=>S.status[i]==="missed").length;$("fb").textContent=`Deck complete! ✓ ${k} known · ${m} to review`}
+ $("fb").className="fb good";stats();
+}
+function mark(ok){
+ const w=cur();if(!w)return;record(w.id,ok);
+ if(P.mode==="smart"&&!ok&&!req.has(w.id)){req.add(w.id);deck.push(w.id)}
+ if(idx<deck.length-1)go(idx+1);else{stats();finish()}
+}
+function makeChoices(w){
+ const en=showEn(),lab=x=>en?x.en:x.ko,seen=new Set([lab(w).toLowerCase()]),opts=[w];
+ for(const x of shuf(S.cards.filter(x=>x.id!==w.id))){if(opts.length>=4)break;const l=lab(x).toLowerCase();if(!seen.has(l)){seen.add(l);opts.push(x)}}
+ if(opts.length<2){$("hint").textContent="Add more words to use this mode.";return}
+ shuf(opts).forEach(o=>{const b=el("button",en?"":"kr",lab(o));b.dataset.id=o.id;b.onclick=()=>pick(w,o,b);$("choices").appendChild(b)});
+}
+function pick(w,o,btn){
+ if(locked)return;locked=true;stopTimer();
+ const ok=!!o&&o.id===w.id;record(w.id,ok);if(exam&&ok)exam.ok++;
+ const kids=[...$("choices").children];kids.forEach(x=>{x.disabled=true});
+ if(btn)btn.classList.add(ok?"good":"bad");
+ if(!ok)kids.forEach(x=>{if(x.dataset.id===w.id)x.classList.add("good")});
+ $("fb").textContent=ok?"Correct! +1 point":(o?"Not quite. Answer: ":"Time's up! Answer: ")+ans(w);$("fb").className="fb "+(ok?"good":"bad");
+ if(P.mode!=="exam"&&(ok||P.dir==="en-ko"))speak();
+ stats();
+}
+function startTimer(){
+ stopTimer();tl=15;const t=$("timer");t.hidden=false;t.textContent="⏱ 15s";
+ timer=setInterval(()=>{tl--;t.textContent="⏱ "+Math.max(tl,0)+"s";if(tl<=0){stopTimer();const w=cur();if(w)pick(w,null,null)}},1000);
+}
+function resumeTimer(){if(P.mode==="exam"&&exam&&!exam.over&&!locked&&cur()&&!timer&&!$("study").hidden&&!document.hidden)startTimer()}
+// typing mode: accepts any one of the "/" alternatives, ignores case, spaces and punctuation
+const nz=s=>s.toLowerCase().normalize("NFC").replace(/[^\p{L}\p{N}]/gu,"");
+const parts=s=>s.split("/").map(nz).filter(Boolean);
+$("typeForm").onsubmit=e=>{
+ e.preventDefault();const w=cur();if(!w||P.mode!=="type")return;
+ if(locked){advance();return}
+ const u=parts($("typeIn").value),a=parts(ans(w));
+ if(!u.length){toast("Type your answer first.");return}
+ locked=true;const ok=u.every(p=>a.includes(p));record(w.id,ok);
+ $("typeIn").disabled=true;$("typeGo").textContent=idx<deck.length-1?"Next →":"Finish ✓";
+ $("fb").textContent=ok?"Correct! +1 point":"Not quite. Answer: "+ans(w);$("fb").className="fb "+(ok?"good":"bad");
+ if(P.auto&&P.dir==="ko-en")speak();stats();try{$("typeGo").focus({preventScroll:true})}catch(x){}
+};
+// matching game: up to 6 pairs per round
+function startMatch(){
+ const ws=shuf(deck.slice()).slice(0,6).map(byId).filter(Boolean),bd=$("board");bd.textContent="";
+ if(ws.length<2){$("hint").textContent="Add at least 2 words to play.";return}
+ let sel=null,left=ws.length,miss=0;
+ const mk=(w,ko)=>{
+  const b=el("button",ko?"kr":"",ko?w.ko:w.en);b.dataset.id=w.id;b.dataset.ko=ko?"1":"0";
+  b.onclick=()=>{
+   if(b.disabled)return;
+   if(sel===b){b.classList.remove("primary");sel=null;return}
+   if(!sel||sel.dataset.ko===b.dataset.ko){if(sel)sel.classList.remove("primary");sel=b;b.classList.add("primary");return}
+   const a=sel;sel=null;a.classList.remove("primary");
+   if(a.dataset.id===b.dataset.id){[a,b].forEach(x=>{x.disabled=true;x.classList.add("good")});score++;left--;stats();if(!left){$("fb").textContent=`All matched! Mistakes: ${miss}`;$("fb").className="fb good"}}
+   else{miss++;[a,b].forEach(x=>x.classList.add("bad"));setTimeout(()=>[a,b].forEach(x=>x.classList.remove("bad")),450)}
+  };
+  return b;
+ };
+ const L=el("div"),R=el("div");
+ shuf(ws.slice()).forEach(w=>L.appendChild(mk(w,true)));shuf(ws.slice()).forEach(w=>R.appendChild(mk(w,false)));
+ bd.append(L,R);
+}
+
+// ---------- manage: categories ----------
+let editCat=null;
+function resetCatForm(){editCat=null;$("catInput").value="";$("catSave").textContent="＋ Add";$("catCancel").hidden=true}
+function renderCats(){
+ const l=$("catList");l.textContent="";
+ if(!S.cats.length){l.appendChild(el("p","small","No categories yet. Add one above."));return}
+ S.cats.forEach(c=>{
+  const n=S.cards.filter(w=>w.cat===c).length,r=el("div","item"),i=el("div","info");
+  i.append(el("strong",null,c),el("br"),el("span","small",`${n} word${n===1?"":"s"}`));
+  const e=el("button",null,"Rename"),d=el("button","bad","Delete");
+  e.onclick=()=>{editCat=c;$("catInput").value=c;$("catSave").textContent="Save";$("catCancel").hidden=false;$("catInput").focus()};
+  d.onclick=async()=>{
+   if(!await ask(`Delete “${c}”${n?` and its ${n} word${n===1?"":"s"}`:""}? This can't be undone.`,"Delete"))return;
+   const gone=new Set(S.cards.filter(w=>w.cat===c).map(w=>w.id));
+   S.cats=S.cats.filter(x=>x!==c);S.cards=S.cards.filter(w=>w.cat!==c);gone.forEach(id=>{delete S.status[id];done.delete(id)});
+   if(editCat===c)resetCatForm();if(editWord&&gone.has(editWord))resetWordForm();
+   refresh();toast("Category deleted");
+  };
+  r.append(i,e,d);l.appendChild(r);
+ });
+}
+$("catForm").onsubmit=e=>{
+ e.preventDefault();const name=$("catInput").value.trim().slice(0,40);
+ if(!name){toast("Type a category name first.");return}
+ if(S.cats.some(c=>same(c,name)&&c!==editCat)){toast("That category already exists.");return}
+ if(editCat===null){S.cats.push(name);refresh();toast("Category added")}
+ else{
+  const old=editCat,wasSel=$("fCat").value===old;
+  S.cats=S.cats.map(c=>c===old?name:c);S.cards.forEach(w=>{if(w.cat===old)w.cat=name});
+  fillSelects();if(wasSel)$("fCat").value=name;refresh();toast("Category renamed");
+ }
+ resetCatForm();
+};
+$("catCancel").onclick=resetCatForm;
+
+// ---------- manage: words ----------
+let editWord=null;
+function resetWordForm(){editWord=null;$("wKo").value="";$("wEn").value="";$("wSave").textContent="＋ Add word";$("wCancel").hidden=true}
+function renderWords(){
+ const l=$("wordList"),q=$("wSearch").value.trim().toLowerCase(),f=$("wFilter").value||"All";l.textContent="";
+ const m=S.cards.filter(w=>(f==="All"||w.cat===f)&&(!q||`${w.ko} ${w.en} ${w.cat}`.toLowerCase().includes(q)));
+ if(!m.length){l.appendChild(el("p","small",S.cards.length?"No matching words.":"No words yet. Add your first one above."));return}
+ m.forEach(w=>{
+  const r=el("div","item"),i=el("div","info");
+  i.append(el("strong","kr",w.ko),el("br"),el("span","small",`${w.en} · ${w.cat}`));
+  const e=el("button",null,"Edit"),d=el("button","bad","Delete");
+  e.onclick=()=>{editWord=w.id;$("wKo").value=w.ko;$("wEn").value=w.en;$("wCat").value=w.cat;$("wSave").textContent="Save changes";$("wCancel").hidden=false;$("wordForm").scrollIntoView({behavior:"smooth",block:"center"});$("wKo").focus({preventScroll:true})};
+  d.onclick=async()=>{
+   if(!await ask(`Delete “${w.ko} — ${w.en}”?`,"Delete"))return;
+   S.cards=S.cards.filter(x=>x.id!==w.id);delete S.status[w.id];done.delete(w.id);if(editWord===w.id)resetWordForm();refresh();toast("Word deleted");
+  };
+  r.append(i,e,d);l.appendChild(r);
+ });
+}
+$("wordForm").onsubmit=async e=>{
+ e.preventDefault();
+ const ko=$("wKo").value.trim(),en=$("wEn").value.trim(),cat=$("wCat").value;
+ if(!S.cats.length){toast("Add a category first.");return}
+ if(!ko||!en){toast("Fill in both Korean and English.");return}
+ if(S.cards.some(w=>same(w.ko,ko)&&w.cat===cat&&w.id!==editWord)&&!await ask("This Korean word already exists in that category. Save anyway?","Save anyway"))return;
+ if(editWord===null){S.cards.push({id:nid(),ko,en,cat});toast("Word added")}
+ else{const w=byId(editWord);if(w){w.ko=ko;w.en=en;w.cat=cat}toast("Changes saved")}
+ resetWordForm();refresh();$("wKo").focus({preventScroll:true});
+};
+$("wCancel").onclick=resetWordForm;$("wSearch").oninput=renderWords;$("wFilter").onchange=renderWords;
+
+// ---------- backup ----------
+$("export").onclick=()=>{
+ try{const b=new Blob([JSON.stringify({app:"eps-topik",version:2,data:S},null,2)],{type:"application/json"}),a=el("a");
+  a.href=URL.createObjectURL(b);a.download="eps-topik-backup.json";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1500);toast("Backup downloaded")}
+ catch(e){toast("Couldn't create the backup.")}
+};
+$("importBtn").onclick=()=>$("importFile").click();
+$("importFile").onchange=async e=>{
+ const f=e.target.files[0];e.target.value="";if(!f)return;
+ try{
+  const j=JSON.parse(await f.text()),c=clean(j&&j.data?j.data:j);
+  if(!c)throw 0;
+  if(!await ask(`Replace your current list with the backup (${c.cards.length} words, ${c.cats.length} categories)?`,"Replace"))return;
+  S=c;done.clear();score=0;resetCatForm();resetWordForm();refresh(true);toast("Backup imported");
+ }catch(err){toast("That file isn't a valid backup.")}
+};
+$("defaults").onclick=async()=>{
+ if(!await ask("Replace everything with the original list from your notes? Your added and edited words will be lost.","Restore"))return;
+ S=defaults();done.clear();score=0;resetCatForm();resetWordForm();refresh(true);toast("Default list restored");
+};
+
+// ---------- wiring ----------
+function refresh(reset){fillSelects();buildDeck(!reset);renderCats();renderWords();save()}
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{
+ document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("on",x===b));
+ $("study").hidden=b.dataset.tab!=="study";$("manage").hidden=b.dataset.tab!=="manage";window.scrollTo(0,0);if(b.dataset.tab==="manage")stopTimer();else resumeTimer();
+});
+$("fCat").onchange=()=>buildDeck(false);
+$("fDir").onchange=e=>{P.dir=e.target.value;save();render()};
+$("fMode").onchange=e=>{P.mode=e.target.value;save();buildDeck(false);autoSpeak()};
+$("fFav").onchange=e=>{P.fav=e.target.checked;save();buildDeck(false)};
+$("fReview").onchange=e=>{P.review=e.target.checked;save();buildDeck(false)};
+$("fAuto").onchange=e=>{P.auto=e.target.checked;save()};
+$("speak").onclick=speak;$("flip").onclick=flip;
+$("prev").onclick=()=>go(idx-1);$("next").onclick=()=>go(idx+1);
+$("good").onclick=()=>mark(true);$("bad").onclick=()=>mark(false);
+$("nextQ").onclick=()=>{if(P.mode==="match"){$("fb").textContent="";$("fb").className="fb";startMatch()}else advance()};
+$("star").onclick=()=>{const w=cur();if(!w)return;if(S.fav[w.id])delete S.fav[w.id];else S.fav[w.id]=1;save();$("star").textContent=S.fav[w.id]?"★":"☆"};
+$("shuffle").onclick=()=>{shuf(deck);idx=0;render()};
+$("reset").onclick=async()=>{
+ if(!await ask("Reset your score and Known / Review marks?","Reset"))return;
+ score=0;done.clear();S.status={};S.srs={};save();buildDeck(true);toast("Progress reset");
+};
+$("card").onclick=e=>{if(!e.target.closest("button,input,form"))flip()};
+document.addEventListener("keydown",e=>{
+ if($("study").hidden||$("dlg").open||e.ctrlKey||e.metaKey||e.altKey||/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(e.target.tagName))return;
+ if(e.key==="ArrowRight")go(idx+1);else if(e.key==="ArrowLeft")go(idx-1);else if(/^[1-4]$/.test(e.key)){const b=$("choices").children[+e.key-1];if(b&&!b.disabled)b.click()}else if(e.key===" "||e.key==="Enter"){e.preventDefault();flip()}
+});
+if("speechSynthesis" in window)try{speechSynthesis.getVoices()}catch(e){}
+document.addEventListener("visibilitychange",()=>{if(document.hidden)stopTimer();else resumeTimer()});
+let ip=null;
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();ip=e;$("install").hidden=false});
+window.addEventListener("appinstalled",()=>{$("install").hidden=true});
+$("install").onclick=async()=>{if(!ip)return;try{ip.prompt();await ip.userChoice}catch(e){}ip=null;$("install").hidden=true};
+if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol))window.addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").catch(()=>{})});
+applyTheme();
+$("fDir").value=P.dir;$("fMode").value=P.mode;$("fReview").checked=P.review;$("fAuto").checked=P.auto;$("fFav").checked=P.fav;
+fillSelects();buildDeck(false);renderCats();renderWords();
+</script>
+</body>
+</html>
