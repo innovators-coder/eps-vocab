@@ -214,28 +214,13 @@ input[type=number],textarea{width:100%;min-height:44px;padding:10px 12px;border-
 
 <script>
 "use strict";
+async function main(){
+let V;
+try{const r=await fetch("vocab.json",{cache:"no-cache"});if(!r.ok)throw 0;V=await r.json();if(!Array.isArray(V.default)||!Array.isArray(V.packs))throw 0}
+catch(e){document.body.innerHTML='<main><h1>Can\u2019t load vocab.json</h1><p>Open the app from its web link (GitHub Pages) or a local server \u2014 not by double-clicking the file. Also check that vocab.json is valid JSON.</p></main>';return}
+const DEF=V.default,PACKS=V.packs;
 const $=id=>document.getElementById(id);
 const KEY="epsTopikNotebook.v2";
-// Source: the handwritten list (image). Categories keep the names written on it.
-const DEF=[
-["Electric appliances",[["에어컨","Air conditioner","eeokon"],["텔레비전","Television","tellebijeon"],["냉장고","Refrigerator","naengjanggo"],["전자레인지","Microwave","jeonjareinji"],["세탁기","Washer","setakgi"],["청소기","Vacuum cleaner","cheongsogi"],["컴퓨터","Computer","keompyuteo"]]],
-["Furniture",[["침대","Bed","chimdae"],["베개","Pillow","begae"],["이불","Blanket","ibul"],["옷장","Closet","otjang"],["소파","Sofa","sopa"],["식탁","Table","siktak"],["의자","Chair","uija"],["책상","Desk","chaeksang"]]],
-["Personal item",[["달력","Calendar","dallyeok"],["지갑","Wallet","jigap"],["여권","Passport","yeogwon"],["열쇠","Key","yeolsoe"],["우산","Umbrella","usan"],["휴대폰 / 휴대전화","Cell phone","hyudaepon / hyudaejeonhwa"],["안경","Glasses","angyeong"],["가족사진","Family picture","gajoksajin"],["시계","Clock / watch","sigye"]]],
-["Personal care",[["화장품","Cosmetics / skincare","hwajangpum"],["거울","Mirror","geoul"],["빗","Brush","bit"],["휴지","Toilet paper","hyuji"]]],
-["School supplies",[["연필","Pencil","yeonpil"],["볼펜","Ballpoint pen","bolpen"],["가위","Scissors","gawi"],["칼","Box cutter","kal"],["계산기","Calculator","gyesangi"],["가방","Bag","gabang"],["컵","Cup","keop"]]]
-];
-// Optional ready-made packs (added only when you press "Add")
-const PACKS=[
-["Numbers (native Korean)",[["하나","Native 1","hana"],["둘","Native 2","dul"],["셋","Native 3","set"],["넷","Native 4","net"],["다섯","Native 5","daseot"],["여섯","Native 6","yeoseot"],["일곱","Native 7","ilgop"],["여덟","Native 8","yeodeol"],["아홉","Native 9","ahop"],["열","Native 10","yeol"]]],
-["Numbers (Sino-Korean)",[["일","Sino 1","il"],["이","Sino 2","i"],["삼","Sino 3","sam"],["사","Sino 4","sa"],["오","Sino 5","o"],["육","Sino 6","yuk"],["칠","Sino 7","chil"],["팔","Sino 8","pal"],["구","Sino 9","gu"],["십","Sino 10","sip"],["백","Sino 100","baek"],["천","Sino 1,000","cheon"],["만","Sino 10,000","man"]]],
-["Days & time",[["월요일","Monday","woryoil"],["화요일","Tuesday","hwayoil"],["수요일","Wednesday","suyoil"],["목요일","Thursday","mogyoil"],["금요일","Friday","geumyoil"],["토요일","Saturday","toyoil"],["일요일","Sunday","iryoil"],["오늘","Today","oneul"],["내일","Tomorrow","naeil"],["어제","Yesterday","eoje"],["아침","Morning","achim"],["저녁","Evening","jeonyeok"],["밤","Night","bam"]]],
-["Food & drink",[["밥","Rice","bap"],["물","Water","mul"],["김치","Kimchi","gimchi"],["고기","Meat","gogi"],["생선","Fish","saengseon"],["야채","Vegetables","yachae"],["과일","Fruit","gwail"],["빵","Bread","ppang"],["우유","Milk","uyu"],["계란","Egg","gyeran"],["커피","Coffee","keopi"],["라면","Instant noodles","ramyeon"]]],
-["Body parts",[["머리","Head","meori"],["눈","Eye","nun"],["코","Nose","ko"],["입","Mouth","ip"],["귀","Ear","gwi"],["손","Hand","son"],["발","Foot","bal"],["다리","Leg","dari"],["팔","Arm","pal"],["배","Stomach","bae"],["등","Back","deung"],["목","Neck","mok"],["허리","Waist","heori"]]],
-["Workplace & factory",[["공장","Factory","gongjang"],["사장님","Boss / company president","sajangnim"],["일","Work","il"],["월급","Monthly salary","wolgeup"],["기계","Machine","gigye"],["장갑","Gloves","janggap"],["안전모","Safety helmet","anjeonmo"],["작업복","Work clothes","jageopbok"],["휴일","Day off","hyuil"],["출근","Going to work","chulgeun"],["퇴근","Leaving work","toegeun"],["야근","Overtime","yageun"]]],
-["Safety & health",[["위험","Danger","wiheom"],["조심","Caution","josim"],["불","Fire","bul"],["병원","Hospital","byeongwon"],["약","Medicine","yak"],["아프다","To be sick / in pain","apeuda"],["도와주세요","Please help me","dowajuseyo"],["응급실","Emergency room","eunggeupsil"],["출구","Exit","chulgu"],["금지","Prohibited","geumji"],["감기","Cold (illness)","gamgi"]]],
-["Family",[["가족","Family","gajok"],["아버지","Father","abeoji"],["어머니","Mother","eomeoni"],["형","Older brother (said by a male)","hyeong"],["누나","Older sister (said by a male)","nuna"],["동생","Younger sibling","dongsaeng"],["아들","Son","adeul"],["딸","Daughter","ttal"],["남편","Husband","nampyeon"],["아내","Wife","anae"]]],
-["Places & directions",[["은행","Bank","eunhaeng"],["시장","Market","sijang"],["학교","School","hakgyo"],["회사","Company","hoesa"],["집","House / home","jip"],["화장실","Toilet","hwajangsil"],["우체국","Post office","ucheguk"],["오른쪽","Right","oreunjjok"],["왼쪽","Left","oenjjok"],["앞","Front","ap"],["뒤","Back / behind","dwi"],["위","Above","wi"],["아래","Below","arae"]]]
-];
 const ROM=Object.create(null);DEF.concat(PACKS).forEach(([c,l])=>l.forEach(x=>{if(x[2])ROM[x[0]]=x[2]}));
 // ---------- Learn tab: Hangul & grammar lessons, in the requested order ----------
 const LESSONS=[
@@ -884,10 +869,12 @@ let ip=null;
 window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();ip=e;$("install").hidden=false});
 window.addEventListener("appinstalled",()=>{$("install").hidden=true});
 $("install").onclick=async()=>{if(!ip)return;try{ip.prompt();await ip.userChoice}catch(e){}ip=null;$("install").hidden=true};
-if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol))window.addEventListener("load",()=>{navigator.serviceWorker.register("./sw.js").catch(()=>{})});
+if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol))navigator.serviceWorker.register("./sw.js").catch(()=>{});
 applyTheme();
 $("fDir").value=P.dir;$("fMode").value=P.mode;$("fReview").checked=P.review;$("fAuto").checked=P.auto;$("fFav").checked=P.fav;$("fRom").checked=P.rom;
 fillSelects();buildDeck(false);renderCats();renderWords();renderProg();renderPacks();renderLearn();checkBackup();
+}
+main();
 </script>
 </body>
 </html>
