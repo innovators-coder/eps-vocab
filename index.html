@@ -85,6 +85,26 @@ input[type=number],textarea{width:100%;min-height:44px;padding:10px 12px;border-
 .quiz-opts{display:grid;gap:6px;margin-top:6px}
 .quiz-opts button{text-align:left;min-height:40px;padding:8px 12px;font-weight:600}
 .quiz-tally{margin-top:8px}
+.stage{margin:20px 0 6px}.stage h3{margin:0;font:700 1.02rem Georgia,serif}
+.path{position:relative;margin:10px 0 0 4px;padding-left:36px}
+.path::before{content:"";position:absolute;left:13px;top:8px;bottom:8px;width:3px;background:var(--line);border-radius:3px}
+.node{position:relative;margin:0 0 10px}
+.dot{position:absolute;left:-36px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--paper);border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;color:var(--muted)}
+.node.done .dot{background:var(--accent);border-color:var(--accent);color:var(--onacc)}
+.node.next .dot{border-color:var(--accent);color:var(--accent);box-shadow:0 0 0 4px var(--goodbg)}
+.ncard{border:1px solid var(--line);border-radius:14px;background:var(--paper)}
+.node.next .ncard{border-color:var(--accent)}
+.nhead{width:100%;text-align:left;background:transparent;border:0;padding:10px 12px;display:block;min-height:48px;font-weight:700}
+.nhead span{display:block;font-size:.84rem;color:var(--muted);font-weight:500;margin-top:2px}
+.badge{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:99px;background:var(--goodbg);color:var(--good);font-size:.72rem;font-weight:800;vertical-align:middle}
+.nbody{padding:0 12px 14px}
+.nbody h3.sec{margin:16px 0 4px;font-size:.95rem;color:var(--accent)}
+.goal{margin:6px 0;font-weight:650}.tip{margin:6px 0;font-size:.9rem;color:var(--muted)}
+.ex{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:12px;padding:8px 10px;margin:6px 0;background:var(--paper2)}
+.ex .t{flex:1;min-width:0}.ex .k{font-size:1.2rem;font-weight:700;overflow-wrap:anywhere}.ex .r{font-size:.82rem;color:var(--muted);font-style:italic}
+.ex button{min-height:38px;width:38px;padding:0;border-radius:50%;flex:none}
+.task{background:var(--goodbg);border-radius:12px;padding:10px 12px;margin-top:12px;line-height:1.45}
+.nfoot{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.nfoot>*{flex:1 1 130px}
 [hidden]{display:none!important}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -146,8 +166,9 @@ input[type=number],textarea{width:100%;min-height:44px;padding:10px 12px;border-
 
 <section id="learn" hidden>
  <div class="panel">
-  <h2>Hangul &amp; Grammar Lessons</h2>
-  <p class="small" id="learnProg"></p>
+  <h2>🗺️ Learning Roadmap</h2>
+  <p class="small">Go step by step: read → see examples → practice. Tap a lesson to open it.</p>
+  <p class="small" id="learnProg" style="font-weight:700"></p>
   <div class="bar"><div id="learnBar"></div></div>
   <div id="learnList"></div>
  </div>
@@ -394,6 +415,25 @@ const LESSONS=[
 <tr><td>Place</td><td class="kr">이곳 (여기)</td><td class="kr">그곳 (거기)</td><td class="kr">저곳 (저기)</td></tr>
 </table>`}
 ];
+const STAGES=[
+{t:"Stage 1 · Read Hangul",d:"Learn to read and sound out every letter.",ids:["l1","l2"]},
+{t:"Stage 2 · Everyday basics",d:"Greetings, numbers, dates and time.",ids:["l3","l4","l5"]},
+{t:"Stage 3 · Build sentences",d:"Particles, word order and where things are.",ids:["l6","l7","l12"]},
+{t:"Stage 4 · Verbs & questions",d:"Make real sentences, then ask and answer.",ids:["l8","l9","l10","l11"]}];
+const EXTRA={
+l1:{goal:"Read any consonant and know how its sound changes at the start, middle and end of a syllable.",tip:"Tip: Ang ㅇ ay walang tunog kapag nasa unahan ng pantig.",task:"Pick 5 words from your Study cards, read them aloud, then check the romanization.",ex:[["가방","gabang","Bag"],["학교","hakgyo","School"],["한국","hanguk","Korea"],["사과","sagwa","Apple"]]},
+l2:{goal:"Know how a letter at the bottom of a syllable (받침) is really pronounced.",tip:"Tip: Tatlong tunog lang sa dulo: K, T, o P (at N, M, NG, L).",task:"Write 5 words with 받침 and say if each ends in a K, T or P sound.",ex:[["먹어","meogeo","Eat (sounds 머거)"],["좋아","joa","Like (sounds 조아)"],["앉아","anja","Sit (sounds 안자)"],["없어","eopseo","Don't have (sounds 업서)"]]},
+l3:{goal:"Say hello, thank you, sorry and meal phrases politely.",tip:"Tip: Gamitin ang 안녕하세요 sa boss at sa lahat ng nakakatanda.",task:"Today, greet 3 people with 안녕하세요 and say 감사합니다 after someone helps you.",ex:[["안녕하세요","annyeonghaseyo","Hello"],["감사합니다","gamsahamnida","Thank you"],["죄송합니다","joesonghamnida","I'm sorry"],["잘 먹겠습니다","jal meokgetseumnida","Thanks for the meal (before eating)"]]},
+l4:{goal:"Choose the right number system: Native for counting, Sino for money, dates and phone numbers.",tip:"Tip: Edad at bilang ng bagay = Native. Pera, petsa, numero = Sino.",task:"Say your age (Native), your phone number (Sino) and today's date aloud.",ex:[["사과 두 개","sagwa du gae","2 apples"],["스물세 살","seumul-se sal","23 years old"],["삼천 원","samcheon won","3,000 won"],["열 시","yeol si","10 o'clock"]]},
+l5:{goal:"Talk about days, dates, time and counting units.",tip:"Tip: Oras (시) = Native, minuto (분) = Sino.",task:"Write tomorrow's schedule with 3 times using 시 and 분.",ex:[["오늘은 월요일이에요","oneureun woryoirieyo","Today is Monday"],["몇 월 며칠이에요?","myeot wol myeochirieyo","What's the date?"],["오전 아홉 시","ojeon ahop si","9 AM"],["내일 세 시에 만나요","naeil se sie mannayo","Let's meet at 3 tomorrow"]]},
+l6:{goal:"Mark the subject, topic, object and place in a sentence with particles.",tip:"Tip: 은/는 = topic, 이/가 = subject, 을/를 = object, 에 = pupunta/nandoon, 에서 = lugar ng kilos.",task:"Write 3 sentences about your day using 은/는, 을/를 and 에서.",ex:[["저는 필리핀 사람이에요","jeoneun pillipin saramieyo","I am Filipino"],["물을 마셔요","mureul masyeoyo","(I) drink water"],["학교에 가요","hakgyoe gayo","(I) go to school"],["공장에서 일해요","gongjangeseo ilhaeyo","(I) work at the factory"]]},
+l7:{goal:"Build a basic sentence: the verb always goes last. Use 이다 and 있다/없다.",tip:"Tip: Subject – Object – Verb. Nasa dulo ang pandiwa, parang Tagalog na 'Ako ay kain'.",task:"Look around you and name 5 things with ~이에요/예요.",ex:[["가방이에요","gabang-ieyo","It's a bag"],["사과예요","sagwayeyo","It's an apple"],["책이 있어요","chaegi isseoyo","There is a book"],["돈이 없어요","doni eopseoyo","I have no money"]]},
+l8:{goal:"Change a dictionary verb (~다) into the formal and polite forms.",tip:"Tip: Alisin ang 다 para makuha ang stem, tapos dagdagan ng ending.",task:"Take 5 verbs from your list and write both the 습니다 and the 요 form.",ex:[["가다 → 가요","gayo","Go"],["먹다 → 먹어요","meogeoyo","Eat"],["하다 → 해요","haeyo","Do"],["덥다 → 더워요","deowoyo","Hot (ㅂ irregular)"]]},
+l9:{goal:"Say what happened, what is happening and what will happen.",tip:"Tip: 았/었 = past, 고 있어요 = ongoing, ㄹ 거예요 = future.",task:"Write 1 sentence each: yesterday, now and tomorrow.",ex:[["어제 일했어요","eoje ilhaesseoyo","I worked yesterday"],["지금 먹고 있어요","jigeum meokgo isseoyo","I'm eating now"],["내일 갈 거예요","naeil gal geoyeyo","I will go tomorrow"],["꼭 하겠습니다","kkok hagetseumnida","I will definitely do it"]]},
+l10:{goal:"Ask, request, refuse and give reasons with common endings.",tip:"Tip: Ito ang mga pangungusap na madalas mong gamitin sa trabaho.",task:"Write 3 requests you may say at work using 주세요, 고 싶어요 and 지 마세요.",ex:[["물 주세요","mul juseyo","Water, please"],["집에 가고 싶어요","jibe gago sipeoyo","I want to go home"],["여기 앉지 마세요","yeogi anji maseyo","Please don't sit here"],["도와주세요","dowajuseyo","Please help me"]]},
+l11:{goal:"Ask who, what, where, when, why and how much.",tip:"Tip: Ang question word ay nasa lugar ng sagot sa pangungusap.",task:"Ask a classmate 3 questions using 어디, 얼마 and 몇.",ex:[["화장실이 어디예요?","hwajangsiri eodiyeyo","Where is the toilet?"],["이거 얼마예요?","igeo eolmayeyo","How much is this?"],["몇 시예요?","myeot siyeyo","What time is it?"],["이름이 뭐예요?","ireumi mwoyeyo","What's your name?"]]},
+l12:{goal:"Say where things are and point to things with 이/그/저.",tip:"Tip: Location word + 에 + 있어요. Halimbawa: 책상 위에 = sa ibabaw ng mesa.",task:"Describe 3 objects in your room using 위, 안 and 옆.",ex:[["책상 위에 가방이 있어요","chaeksang wie gabangi isseoyo","The bag is on the desk"],["냉장고 안에 우유가 있어요","naengjanggo ane uyuga isseoyo","Milk is inside the fridge"],["이것은 뭐예요?","igeoseun mwoyeyo","What is this?"],["저기가 화장실이에요","jeogiga hwajangsirieyo","The toilet is over there"]]}
+};
 const QUIZZES={
 l1:[{q:"What does ㄱ sound like at the END of a syllable (받침)?",o:["G","K","N","Silent"],a:1},
 {q:"Which letter is silent at the START of a syllable?",o:["ㅇ","ㅎ","ㄴ","ㅋ"],a:0},
@@ -457,20 +497,80 @@ function buildQuiz(container,id){
  box.appendChild(tally);container.appendChild(box);
 }
 
+const ORDER=STAGES.flatMap(x=>x.ids),LBY=Object.fromEntries(LESSONS.map(l=>[l.id,l]));
+const cleanT=t=>t.replace(/^\d+\.\s*/,"");
+let openLesson=null,learnInit=false;
+function speak(t){try{const u=new SpeechSynthesisUtterance(t);u.lang="ko-KR";u.rate=.85;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+const rnd=a=>a.slice().sort(()=>Math.random()-.5);
+function buildExamples(c,ex){
+ c.appendChild(el("h3","sec","1 · Examples"));
+ ex.forEach(([ko,rom,en])=>{
+  const r=el("div","ex"),t=el("div","t");
+  t.append(el("div","k kr",ko),el("div","r",rom),el("div",null,en));
+  const b=el("button",null,"🔊");b.setAttribute("aria-label","Listen: "+ko);b.onclick=()=>speak(ko);
+  r.append(t,b);c.appendChild(r);
+ });
+}
+function buildMatch(c,id){
+ const ex=EXTRA[id].ex,pool=[...new Set(Object.values(EXTRA).flatMap(x=>x.ex.map(e=>e[2])))];
+ const box=el("div","quiz-box");box.appendChild(el("p",null,"🔤 Match the meaning — what does each example mean?"));
+ const pick=rnd(ex).slice(0,3);let ok=0,ans=0;
+ const tally=el("p","small quiz-tally");tally.textContent="0 / "+pick.length+" answered";
+ pick.forEach((e,qi)=>{
+  const w=el("div","quiz-q");w.appendChild(el("p","kr",(qi+1)+". "+e[0]));
+  const o=el("div","quiz-opts");
+  rnd([e[2],...rnd(pool.filter(x=>x!==e[2])).slice(0,3)]).forEach(t=>{
+   const b=el("button",null,t);
+   b.onclick=()=>{[...o.children].forEach(x=>x.disabled=true);ans++;const g=t===e[2];if(g)ok++;b.classList.add(g?"good":"bad");if(!g)[...o.children].find(x=>x.textContent===e[2]).classList.add("good");tally.textContent=ans+" / "+pick.length+" answered · "+ok+" correct"};
+   o.appendChild(b);
+  });
+  w.appendChild(o);box.appendChild(w);
+ });
+ box.appendChild(tally);c.appendChild(box);
+}
+function lessonBody(l,nextL){
+ const x=EXTRA[l.id],done=S.lessonsDone||{},b=el("div","nbody");
+ b.appendChild(el("p","goal","🎯 You will learn: "+x.goal));b.appendChild(el("p","tip","💡 "+x.tip));
+ buildExamples(b,x.ex);
+ const nd=el("details","lesson");nd.appendChild(el("summary",null,"📘 Full notes & rules (open when you need more detail)"));
+ const nb=el("div","lesson-body");nb.innerHTML=l.html;nd.appendChild(nb);b.appendChild(nd);
+ b.appendChild(el("h3","sec","2 · Activities"));
+ buildQuiz(b,l.id);buildMatch(b,l.id);
+ b.appendChild(el("div","task","✍️ Try it yourself: "+x.task));
+ const f=el("div","nfoot"),m=el("button",done[l.id]?null:"primary",done[l.id]?"↩ Mark as not done":"✓ Mark lesson as done");
+ m.onclick=()=>{S.lessonsDone=S.lessonsDone||{};if(done[l.id])delete S.lessonsDone[l.id];else{S.lessonsDone[l.id]=true;openLesson=nextL?nextL.id:null}save();renderLearn()};
+ f.appendChild(m);
+ if(nextL&&nextL.id!==l.id){const nx=el("button",null,"Next lesson →");nx.onclick=()=>{openLesson=nextL.id;renderLearn();scrollToOpen()};f.appendChild(nx)}
+ b.appendChild(f);return b;
+}
+function scrollToOpen(){const e=document.querySelector(".node.open");if(e)e.scrollIntoView({block:"start",behavior:"smooth"})}
 function renderLearn(){
  const wrap=$("learnList");wrap.textContent="";
- const done=S.lessonsDone||{},n=LESSONS.filter(l=>done[l.id]).length;
- $("learnProg").textContent=`${n} / ${LESSONS.length} lessons marked done`;
- $("learnBar").style.width=Math.round(n/LESSONS.length*100)+"%";
- LESSONS.forEach((l,i)=>{
-  const d=el("details","lesson");if(i===0&&!n)d.open=true;
-  const s=el("summary");
-  const chk=el("input");chk.type="checkbox";chk.checked=!!done[l.id];chk.setAttribute("aria-label","Mark "+l.title+" done");
-  chk.onclick=e=>e.stopPropagation();
-  chk.onchange=()=>{S.lessonsDone=S.lessonsDone||{};if(chk.checked)S.lessonsDone[l.id]=true;else delete S.lessonsDone[l.id];save();renderLearn()};
-  const t=el("span",null,(done[l.id]?"✓ ":"")+l.title);
-  s.append(chk,t);const c=el("div","lesson-body");c.innerHTML=l.html;buildQuiz(c,l.id);
-  d.append(s,c);wrap.appendChild(d);
+ const done=S.lessonsDone||{},n=ORDER.filter(id=>done[id]).length;
+ const nextId=ORDER.find(id=>!done[id]);
+ if(!learnInit){openLesson=nextId||null;learnInit=true}
+ $("learnProg").textContent=n+" / "+ORDER.length+" lessons done"+(nextId?" · Next: "+cleanT(LBY[nextId].title):" · 🎉 You finished the roadmap!");
+ $("learnBar").style.width=Math.round(n/ORDER.length*100)+"%";
+ let num=0;
+ STAGES.forEach(st=>{
+  const sd=st.ids.filter(id=>done[id]).length,sw=el("div","stage");
+  sw.append(el("h3",null,st.t+"  ("+sd+"/"+st.ids.length+")"),el("p","small",st.d));wrap.appendChild(sw);
+  const path=el("div","path");
+  st.ids.forEach(id=>{
+   num++;const l=LBY[id],isDone=!!done[id],isOpen=openLesson===id;
+   const nd=el("div","node"+(isDone?" done":"")+(id===nextId?" next":"")+(isOpen?" open":""));
+   nd.appendChild(el("div","dot",isDone?"✓":String(num)));
+   const card=el("div","ncard"),h=el("button","nhead");
+   const tt=el("div",null,cleanT(l.title));
+   if(id===nextId){tt.appendChild(el("span","badge","START HERE"))}
+   h.append(tt,el("span",null,EXTRA[id].goal));
+   h.setAttribute("aria-expanded",isOpen);
+   h.onclick=()=>{openLesson=isOpen?null:id;renderLearn();if(!isOpen)scrollToOpen()};
+   card.appendChild(h);
+   if(isOpen){const i=ORDER.indexOf(id);const nx=ORDER.slice(i+1).concat(ORDER.slice(0,i)).find(k=>!done[k]&&k!==id);card.appendChild(lessonBody(l,nx?LBY[nx]:null))}
+   nd.appendChild(card);path.appendChild(nd);
+  });
+  wrap.appendChild(path);
  });
 }
 
