@@ -500,15 +500,35 @@ function buildQuiz(container,id){
 const ORDER=STAGES.flatMap(x=>x.ids),LBY=Object.fromEntries(LESSONS.map(l=>[l.id,l]));
 const cleanT=t=>t.replace(/^\d+\.\s*/,"");
 let openLesson=null,learnInit=false;
-function speak(t){try{const u=new SpeechSynthesisUtterance(t);u.lang="ko-KR";u.rate=.85;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+let KO_VOICE=null,voiceWarned=false;
+function pickVoice(){
+ try{const vs=speechSynthesis.getVoices().filter(v=>/^ko/i.test((v.lang||"").replace("_","-")));
+  if(!vs.length)return null;
+  const sc=v=>(/natural|neural|online/i.test(v.name)?5:0)+(/google/i.test(v.name)?4:0)+(/premium|enhanced|yuna|sora|heami|sunhi|injoon|seoyeon/i.test(v.name)?3:0)+(/^ko[-_]KR$/i.test(v.lang)?1:0);
+  return vs.sort((a,b)=>sc(b)-sc(a))[0];
+ }catch(e){return null}
+}
+function say(text,slow){
+ if(!("speechSynthesis"in window)||typeof SpeechSynthesisUtterance==="undefined"){toast("Sound isn't supported in this browser.");return}
+ const clean=String(text).replace(/→/g,", ").replace(/[~()]/g," ").replace(/\s+/g," ").trim();if(!clean)return;
+ try{
+  KO_VOICE=KO_VOICE||pickVoice();
+  if(!KO_VOICE&&!voiceWarned){voiceWarned=true;toast("No Korean voice found. Install one in your phone's Text-to-speech settings for better sound.")}
+  const u=new SpeechSynthesisUtterance(clean);u.lang="ko-KR";u.rate=slow?.55:.8;u.pitch=1;u.volume=1;
+  if(KO_VOICE){u.voice=KO_VOICE;u.lang=KO_VOICE.lang}
+  speechSynthesis.cancel();
+  setTimeout(()=>{try{speechSynthesis.resume();speechSynthesis.speak(u)}catch(e){}},60);
+ }catch(e){toast("Couldn't play sound.")}
+}
 const rnd=a=>a.slice().sort(()=>Math.random()-.5);
 function buildExamples(c,ex){
  c.appendChild(el("h3","sec","1 · Examples"));
  ex.forEach(([ko,rom,en])=>{
   const r=el("div","ex"),t=el("div","t");
   t.append(el("div","k kr",ko),el("div","r",rom),el("div",null,en));
-  const b=el("button",null,"🔊");b.setAttribute("aria-label","Listen: "+ko);b.onclick=()=>speak(ko);
-  r.append(t,b);c.appendChild(r);
+  const b=el("button",null,"🔊");b.setAttribute("aria-label","Listen: "+ko);b.onclick=()=>say(ko,false);
+  const sl=el("button",null,"🐢");sl.setAttribute("aria-label","Listen slowly: "+ko);sl.title="Slow";sl.onclick=()=>say(ko,true);
+  r.append(t,b,sl);c.appendChild(r);
  });
 }
 function buildMatch(c,id){
@@ -698,12 +718,7 @@ function stats(){
  $("bar").style.width=Math.min(100,deck.length?a/deck.length*100:0)+"%";$("progText").textContent=`${a} of ${deck.length} answered this session`;
 }
 function flip(){if(!isFl()||!cur())return;shown=!shown;$("answer").hidden=!shown;$("flip").textContent=shown?"Hide answer":"Show answer";$("hint").textContent=shown?"Did you remember it? Mark yourself below.":HINT[P.mode]}
-function speak(){
- const w=cur();if(!w)return;
- if(!("speechSynthesis" in window)||typeof SpeechSynthesisUtterance==="undefined"){toast("Sound isn't supported in this browser.");return}
- try{const u=new SpeechSynthesisUtterance(w.ko.split("/")[0].trim());u.lang="ko-KR";u.rate=.8;
-  const v=speechSynthesis.getVoices().find(v=>/^ko/i.test(v.lang));if(v)u.voice=v;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){toast("Couldn't play sound.")}
-}
+function speak(){const w=cur();if(!w)return;say(w.ko.split("/")[0].trim(),false)}
 function autoSpeak(){if(!cur()||P.mode==="match")return;if(P.mode==="listen"||(P.auto&&P.dir==="ko-en"))speak()}
 function go(n){if(n<0||n>=deck.length)return;idx=n;render();autoSpeak();if(P.mode==="type"){try{$("typeIn").focus({preventScroll:true})}catch(e){}}}
 function advance(){if(idx<deck.length-1)go(idx+1);else finish()}
@@ -963,7 +978,7 @@ document.addEventListener("keydown",e=>{
  if($("study").hidden||$("dlg").open||e.ctrlKey||e.metaKey||e.altKey||/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(e.target.tagName))return;
  if(e.key==="ArrowRight")go(idx+1);else if(e.key==="ArrowLeft")go(idx-1);else if(/^[1-4]$/.test(e.key)){const b=$("choices").children[+e.key-1];if(b&&!b.disabled)b.click()}else if(e.key===" "||e.key==="Enter"){e.preventDefault();flip()}
 });
-if("speechSynthesis" in window)try{speechSynthesis.getVoices()}catch(e){}
+if("speechSynthesis" in window)try{speechSynthesis.getVoices();speechSynthesis.addEventListener("voiceschanged",()=>{KO_VOICE=pickVoice()})}catch(e){}
 document.addEventListener("visibilitychange",()=>{if(document.hidden)stopTimer();else resumeTimer()});
 let ip=null;
 window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();ip=e;$("install").hidden=false});
