@@ -986,7 +986,7 @@ function speakSeq(texts,done,onstart){
  const next=()=>{
   if(tok!==pTok||fin)return;
   if(i>=texts.length){end();return}
-  const u=new SpeechSynthesisUtterance(texts[i++]);u.lang="ko-KR";u.rate=.8;
+  const u=new SpeechSynthesisUtterance(texts[i++]);u.lang="ko-KR";u.rate=.8;u.volume=1;
   if(KO_VOICE){u.voice=KO_VOICE;u.lang=KO_VOICE.lang}
   u.onstart=()=>{if(onstart&&tok===pTok)onstart()};u.onend=()=>setTimeout(next,[0,400,1500,400][i]||0);
   u.onerror=()=>end();
@@ -994,8 +994,23 @@ function speakSeq(texts,done,onstart){
  };
  setTimeout(next,80);
 }
+let AC=null;
+function unlockAudio(){try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();if(AC.state==="suspended")AC.resume()}catch(e){}}
+// two short "ding-ding" beeps so the listener knows a new question starts
+function beep2(done){
+ try{
+  unlockAudio();if(!AC){done();return}
+  const t0=AC.currentTime+.03,mix=AC.createGain();mix.gain.value=1;
+  const comp=AC.createDynamicsCompressor();mix.connect(comp);comp.connect(AC.destination);
+  [0,.38].forEach(d=>[[880,"triangle",.65],[1320,"sine",.35]].forEach(([f,type,v])=>{
+   const o=AC.createOscillator(),g=AC.createGain();o.type=type;o.frequency.value=f;
+   g.gain.setValueAtTime(0,t0+d);g.gain.linearRampToValueAtTime(v,t0+d+.015);g.gain.exponentialRampToValueAtTime(.001,t0+d+.33);
+   o.connect(g);g.connect(mix);o.start(t0+d);o.stop(t0+d+.35)}));
+  setTimeout(done,1000);
+ }catch(e){done()}
+}
 function pBack(){pStop();pLv=-1;renderExam()}
-function pStart(i){pStop();pLv=i;pQ=0;pAns=[];renderExam()}
+function pStart(i){pStop();unlockAudio();pLv=i;pQ=0;pAns=[];renderExam()}
 function pMenu(box){
  const cfg=PR[pType];
  box.appendChild(el("h2",null,pType==="reading"?"📖 Reading":"🎧 Listening"));
@@ -1032,11 +1047,17 @@ function pQView(box){
   if(pTimer||locked)return;let s=cfg.time;setT(s);st.textContent="";
   pTimer=setInterval(()=>{s--;setT(s);if(s<=0){
    clearInterval(pTimer);pTimer=null;
-   if(!locked){locked=true;pAns[pQ]=-1;wrap.style.pointerEvents="none";st.textContent="⏰ Time's up!";st.className="fb bad";pAuto=setTimeout(pNext,1200)}
+   if(!locked){locked=true;if(pAns[pQ]==null)pAns[pQ]=-1;wrap.style.pointerEvents="none";if(isL){pNext();return}st.textContent="⏰ Time's up!";st.className="fb bad";pAuto=setTimeout(pNext,1200)}
   }},1000);
  };
  function pick(oi,b){
-  if(locked)return;locked=true;pStop();pAns[pQ]=oi;bump();save();
+  if(locked)return;
+  if(isL){ // listening: answer can be changed until the short window after the audio ends
+   if(pAns[pQ]==null||pAns[pQ]<0){bump();save()}
+   pAns[pQ]=oi;[...wrap.children].forEach(x=>x.classList.remove("picked"));b.classList.add("picked");
+   st.textContent="✓ Answer saved";st.className="fb";return;
+  }
+  locked=true;pStop();pAns[pQ]=oi;bump();save();
   wrap.style.pointerEvents="none";b.classList.add("picked");tm.textContent="";
   st.textContent=pQ<n-1?"✓ Answer saved — next question in 3 seconds…":"✓ Answer saved — results in 3 seconds…";st.className="fb";
   pAuto=setTimeout(pNext,3000);
@@ -1044,10 +1065,10 @@ function pQView(box){
  if(isL){
   tm.textContent="🔊 Listening…";const no=NUMKO[pQ+1]+" 번";
   const seq=[no,q.q,no,q.q];let heard=false;
-  speakSeq(seq,startT,()=>{heard=true});pSafe=setTimeout(startT,45000);
+  const my=pTok;beep2(()=>{if(pTok!==my||locked)return;speakSeq(seq,startT,()=>{heard=true})});pSafe=setTimeout(startT,45000);
   // some phones (iPhone) block audio that doesn't start from a tap: offer a play button
   setTimeout(()=>{if(heard||locked||pTimer)return;const pb=el("button","primary","🔊 Tap to play the question");
-   pb.onclick=()=>{pb.remove();clearTimeout(pSafe);pSafe=setTimeout(startT,45000);speakSeq(seq,startT,()=>{heard=true})};st.textContent="";st.className="fb";st.appendChild(pb)},1800);
+   pb.onclick=()=>{pb.remove();clearTimeout(pSafe);pSafe=setTimeout(startT,45000);speakSeq(seq,startT,()=>{heard=true})};st.textContent="";st.className="fb";st.appendChild(pb)},3200);
  }else startT();
 }
 function pNext(){pQ++;renderExam()}
