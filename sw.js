@@ -1,4 +1,4 @@
-const C="eps-topik-v12";
+const C="eps-topik-v13";
 const FILES=["./","./index.html","./manifest.webmanifest","./icon-192.png","./icon-512.png","./vocab.json","./practice.json"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(C).then(c=>Promise.all(FILES.map(f=>c.add(f).catch(()=>{})))).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
