@@ -1010,7 +1010,8 @@ function beep2(done){
   setTimeout(done,1000);
  }catch(e){done()}
 }
-function pBack(){pStop();pLv=-1;renderExam()}
+const pScroll={reading:0,listening:0};
+function pBack(){pStop();pLv=-1;renderExam();const y=pScroll[pType]||0;requestAnimationFrame(()=>{window.scrollTo(0,y);requestAnimationFrame(()=>window.scrollTo(0,y))})}
 function pStart(i){pStop();unlockAudio();pLv=i;pQ=0;pAns=[];renderExam()}
 function pMenu(box){
  const cfg=PR[pType];
