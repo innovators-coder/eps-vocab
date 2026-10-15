@@ -29,8 +29,13 @@ button.icon{width:44px;padding:0;font-size:1.2rem;border-radius:50%}
 :is(button,select,input,summary):focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 select,input[type=text],input[type=search]{width:100%;min-height:44px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--paper)}
 label{display:block;font-weight:650;font-size:.88rem;margin:0 0 5px}
-.tabs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:16px 0 12px;background:var(--paper2);padding:5px;border-radius:15px;border:1px solid var(--line)}
-.tabs button{border:0;background:transparent;min-height:42px}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:16px 0 12px;background:var(--paper2);padding:5px;border-radius:15px;border:1px solid var(--line)}
+.tabs button{border:0;background:transparent;min-height:42px;padding:8px 4px;font-size:.86rem}
+.pimg{display:block;max-width:100%;max-height:260px;margin:0 auto 12px;border-radius:12px;border:1px solid var(--line)}
+.pq{font-weight:700;line-height:1.5;margin:0 0 10px}
+.pplay{display:flex;gap:8px;margin:0 0 12px}.pplay button{flex:1}
+.popts{display:grid;gap:8px}.popts button{text-align:left;background:var(--paper);min-height:48px}
+.pexp{margin-top:12px;padding:10px 12px;border-radius:12px;background:var(--goodbg);line-height:1.5}
 .tabs button.on{background:var(--paper);box-shadow:var(--shadow);color:var(--accent)}
 .panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:var(--shadow)}
 .grid{display:grid;gap:10px;grid-template-columns:1fr 1fr}.grid .full{grid-column:1/-1}
@@ -105,6 +110,12 @@ input[type=number],textarea{width:100%;min-height:44px;padding:10px 12px;border-
 .ex button{min-height:38px;width:38px;padding:0;border-radius:50%;flex:none}
 .task{background:var(--goodbg);border-radius:12px;padding:10px 12px;margin-top:12px;line-height:1.45}
 .nfoot{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.nfoot>*{flex:1 1 130px}
+.plevel{display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;margin:6px 0;text-align:left}
+.phead{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:6px}.phead button{min-height:36px;padding:4px 10px;font-size:.85rem}
+.pscore{font:700 2rem Georgia,serif;margin:4px 0}
+.prev{border:1px solid var(--line);border-left-width:5px;border-radius:12px;padding:10px 12px;margin:8px 0;background:var(--paper2);line-height:1.5;white-space:pre-line}
+.prev.ok{border-left-color:var(--good)}.prev.no{border-left-color:var(--bad)}
+.pstat{color:var(--good)}.pstat.bad{color:var(--bad)}
 [hidden]{display:none!important}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -116,7 +127,7 @@ input[type=number],textarea{width:100%;min-height:44px;padding:10px 12px;border-
  <button id="theme" class="icon" aria-label="Toggle dark mode">🌙</button>
 </header>
 <div class="panel" id="bk" hidden><p style="margin:0 0 10px"><b>💾 Time for a backup.</b> <span class="small">It's been a while since your last export.</span></p><div class="row"><button class="primary" id="bkNow">Export now</button><button id="bkLater">Remind me later</button></div></div>
-<nav class="tabs" aria-label="Sections"><button class="on" data-tab="study">📖 Study</button><button data-tab="learn">📚 Learn</button><button data-tab="manage">⚙️ Manage</button></nav>
+<nav class="tabs" aria-label="Sections"><button class="on" data-tab="study">📖 Study</button><button data-tab="learn">📚 Learn</button><button data-tab="practice">📝 Exam</button><button data-tab="manage">⚙️ Manage</button></nav>
 
 <section id="study">
  <div class="panel grid">
@@ -172,6 +183,15 @@ input[type=number],textarea{width:100%;min-height:44px;padding:10px 12px;border-
   <div class="bar"><div id="learnBar"></div></div>
   <div id="learnList"></div>
  </div>
+</section>
+
+<section id="practice" hidden>
+ <div class="panel">
+  <h2>📝 Exam practice</h2>
+  <p class="small">Exam style: every question is timed, your answer moves on automatically, and the correct answers are shown at the end.</p>
+  <div class="row"><button id="pRead" class="primary">📖 Reading</button><button id="pListen">🎧 Listening</button></div>
+ </div>
+ <div class="panel" id="pBox"></div>
 </section>
 
 <section id="manage" hidden>
@@ -240,6 +260,8 @@ let V;
 try{const r=await fetch("vocab.json",{cache:"no-cache"});if(!r.ok)throw 0;V=await r.json();if(!Array.isArray(V.default)||!Array.isArray(V.packs))throw 0}
 catch(e){document.body.innerHTML='<main><h1>Can\u2019t load vocab.json</h1><p>Open the app from its web link (GitHub Pages) or a local server \u2014 not by double-clicking the file. Also check that vocab.json is valid JSON.</p></main>';return}
 const DEF=V.default,PACKS=V.packs;
+let PR={pass:.6,reading:{time:60,instr:"",levels:[]},listening:{time:30,instr:"",levels:[]}};
+try{const r=await fetch("practice.json",{cache:"no-cache"});if(r.ok){const j=await r.json();if(j&&typeof j==="object"){PR.pass=Number(j.pass)||.6;["reading","listening"].forEach(k=>{const x=j[k];if(x&&Array.isArray(x.levels))PR[k]={time:Number(x.time)||60,instr:x.instr||"",levels:x.levels.filter(l=>l&&Array.isArray(l.questions)&&l.questions.length)}})}}}catch(e){}
 const $=id=>document.getElementById(id);
 const KEY="epsTopikNotebook.v2";
 const ROM=Object.create(null);DEF.concat(PACKS).forEach(([c,l])=>l.forEach(x=>{if(x[2])ROM[x[0]]=x[2]}));
@@ -628,7 +650,7 @@ try{const r=JSON.parse(localStorage.getItem(KEY)||"null");if(r){S=clean(r.data);
 if(!S)S=defaults();
 if(!["ko-en","en-ko"].includes(P.dir))P.dir="ko-en";
 if(!["flash","smart","quiz","listen","type","exam","match"].includes(P.mode))P.mode="flash";
-P.auto=!!P.auto;P.review=!!P.review;P.fav=!!P.fav;P.rom=P.rom!==false;P.firstRun=Number(P.firstRun)||Date.now();P.lastExport=Number(P.lastExport)||0;P.snooze=Number(P.snooze)||0;
+if(!P.exam||typeof P.exam!=="object")P.exam={};P.auto=!!P.auto;P.review=!!P.review;P.fav=!!P.fav;P.rom=P.rom!==false;P.firstRun=Number(P.firstRun)||Date.now();P.lastExport=Number(P.lastExport)||0;P.snooze=Number(P.snooze)||0;
 function save(){try{localStorage.setItem(KEY,JSON.stringify({data:S,prefs:P}))}catch(e){if(storageOK){storageOK=false;$("storeNote").textContent="⚠ This browser can't save data. Changes last only while this page is open — use Export backup.";toast("Can't save here — use Export backup.")}}}
 
 let tt;function toast(m,label,fn){const t=$("toast");t.textContent=m;t.classList.toggle("act",!!fn);if(fn){const b=el("button",null,label);b.onclick=()=>{t.classList.remove("on");fn()};t.append(b)}t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),fn?7000:2600)}
@@ -948,11 +970,125 @@ $("defaults").onclick=async()=>{
  snap();S=defaults();done.clear();score=0;resetCatForm();resetWordForm();refresh(true);toast("Default list restored","Undo",undo);
 };
 
+// ---------- exam practice (reading + listening) ----------
+let pType="reading",pLv=-1,pQ=0,pAns=[],pTimer=null,pAuto=null,pSafe=null,pTok=0;
+const NUMKO=["영","일","이","삼","사","오","육","칠","팔","구","십","십일","십이","십삼","십사","십오"],CIR=["①","②","③","④","⑤"];
+const pNeed=n=>Math.ceil(n*PR.pass-1e-9);
+function pStop(){clearInterval(pTimer);pTimer=null;clearTimeout(pAuto);pAuto=null;clearTimeout(pSafe);pSafe=null;pTok++;try{if("speechSynthesis"in window)speechSynthesis.cancel()}catch(e){}}
+// reads the list in order (number, question, number, question), then calls done
+function speakSeq(texts,done){
+ const tok=++pTok;let i=0,fin=false;
+ const end=()=>{if(!fin&&tok===pTok){fin=true;done()}};
+ if(!("speechSynthesis"in window)||typeof SpeechSynthesisUtterance==="undefined"){toast("Sound isn't supported in this browser.");end();return}
+ KO_VOICE=KO_VOICE||pickVoice();
+ try{speechSynthesis.cancel()}catch(e){}
+ const next=()=>{
+  if(tok!==pTok||fin)return;
+  if(i>=texts.length){end();return}
+  const u=new SpeechSynthesisUtterance(texts[i++]);u.lang="ko-KR";u.rate=.8;
+  if(KO_VOICE){u.voice=KO_VOICE;u.lang=KO_VOICE.lang}
+  u.onend=()=>setTimeout(next,[0,400,1500,400][i]||0);
+  u.onerror=()=>end();
+  try{speechSynthesis.resume();speechSynthesis.speak(u)}catch(e){end()}
+ };
+ setTimeout(next,80);
+}
+function pBack(){pStop();pLv=-1;renderExam()}
+function pStart(i){pStop();pLv=i;pQ=0;pAns=[];renderExam()}
+function pMenu(box){
+ const cfg=PR[pType];
+ box.appendChild(el("h2",null,pType==="reading"?"📖 Reading":"🎧 Listening"));
+ if(!cfg.levels.length){box.appendChild(el("p","small","No levels yet. Add some in practice.json."));return}
+ box.appendChild(el("p","small",pType==="reading"
+  ?`${cfg.time} seconds per question · pass mark ${Math.round(PR.pass*100)}%. After you answer, it moves to the next question in 3 seconds.`
+  :`You hear the question number and the question, twice. Only the choices are shown. ${cfg.time} seconds to answer after the audio · pass mark ${Math.round(PR.pass*100)}%.`));
+ cfg.levels.forEach((lv,i)=>{
+  const n=lv.questions.length,best=(P.exam[pType]||{})[i],passed=best!=null&&best>=pNeed(n);
+  const b=el("button","plevel"),l=el("div"),t=el("b",null,lv.title||("Level "+(i+1)));
+  l.append(t,el("br"),el("span","small",n+" questions"+(best!=null?` · Best ${best}/${n}`:"")));
+  b.append(l,el("span",passed?"pstat":"small",passed?"✓ Passed":"Start →"));
+  b.onclick=()=>pStart(i);box.appendChild(b);
+ });
+}
+function pQView(box){
+ const cfg=PR[pType],lv=cfg.levels[pLv],q=lv.questions[pQ],n=lv.questions.length,isL=pType==="listening";
+ let locked=false;
+ const back=el("button",null,"← Levels");back.onclick=pBack;
+ const tm=el("span","timer",""),top=el("div","phead");tm.style.margin="0";
+ top.append(back,el("span","chip",`Question ${pQ+1} / ${n}`),tm);
+ const bar=el("div","bar"),fill=el("div");bar.appendChild(fill);box.append(top,bar);
+ if(isL)box.appendChild(el("p","pq","🎧 Listen to the question, then choose the answer."));
+ else{
+  if(!q.img&&cfg.instr)box.appendChild(el("p","small",cfg.instr));
+  if(q.img){const im=el("img","pimg");im.src=q.img;im.alt=q.alt||"Question picture";box.appendChild(im)}
+  if(q.q){const t=el("p","kr pq",q.q);t.style.whiteSpace="pre-line";box.appendChild(t)}
+ }
+ const wrap=el("div","popts"),st=el("div","fb");st.setAttribute("aria-live","polite");
+ q.opts.forEach((o,oi)=>{const b=el("button","kr",CIR[oi]+" "+(Array.isArray(o)?o[0]:o));b.onclick=()=>pick(oi,b);wrap.appendChild(b)});
+ box.append(wrap,st);
+ const setT=s=>{tm.textContent="⏱ "+s+"s";fill.style.width=Math.max(0,s/cfg.time*100)+"%"};
+ const startT=()=>{
+  if(pTimer||locked)return;let s=cfg.time;setT(s);st.textContent="";
+  pTimer=setInterval(()=>{s--;setT(s);if(s<=0){
+   clearInterval(pTimer);pTimer=null;
+   if(!locked){locked=true;pAns[pQ]=-1;wrap.style.pointerEvents="none";st.textContent="⏰ Time's up!";st.className="fb bad";pAuto=setTimeout(pNext,1200)}
+  }},1000);
+ };
+ function pick(oi,b){
+  if(locked)return;locked=true;pStop();pAns[pQ]=oi;bump();save();
+  wrap.style.pointerEvents="none";b.classList.add("primary");tm.textContent="";
+  st.textContent=pQ<n-1?"✓ Answer saved — next question in 3 seconds…":"✓ Answer saved — results in 3 seconds…";st.className="fb";
+  pAuto=setTimeout(pNext,3000);
+ }
+ if(isL){
+  tm.textContent="🔊 Listening…";const no=NUMKO[pQ+1]+" 번";
+  speakSeq([no,q.q,no,q.q],startT);pSafe=setTimeout(startT,45000);
+ }else startT();
+}
+function pNext(){pQ++;renderExam()}
+function pResult(box){
+ pStop();
+ const cfg=PR[pType],lv=cfg.levels[pLv],n=lv.questions.length,isL=pType==="listening";
+ let score=0;lv.questions.forEach((q,i)=>{if(pAns[i]===q.a)score++});
+ const need=pNeed(n),pass=score>=need,hasNext=pLv<cfg.levels.length-1;
+ P.exam[pType]=P.exam[pType]||{};if(!(P.exam[pType][pLv]>=score)){P.exam[pType][pLv]=score}save();
+ const h=el("h2",pass?"pstat":"pstat bad",pass?"🎉 PASSED!":"💪 Not yet — try again");
+ box.append(h,el("div","pscore",`${score} / ${n} points`),el("p","small",`${Math.round(score/n*100)}% · pass mark ${need}/${n} · ${lv.title||""}`));
+ const act=el("div","nfoot");
+ if(pass&&hasNext){const nb=el("button","primary","Next level →");nb.onclick=()=>pStart(pLv+1);act.appendChild(nb)}
+ const ag=el("button",pass?"":"primary","↻ Try again");ag.onclick=()=>pStart(pLv);act.appendChild(ag);
+ const bk=el("button",null,"← Back to levels");bk.onclick=pBack;act.appendChild(bk);
+ box.appendChild(act);
+ box.appendChild(el("h3","sec","Correct answers"));
+ const lbl=(q,oi)=>{const o=q.opts[oi],t=Array.isArray(o)?o:[o];return CIR[oi]+" "+t[0]+(t[1]?" — "+t[1]:"")};
+ lv.questions.forEach((q,i)=>{
+  const ok=pAns[i]===q.a,d=el("div","prev "+(ok?"ok":"no"));
+  let head=isL?"🎧 "+q.q+(q.tr?"  ("+q.tr+")":""):q.img?"🖼 "+(q.alt||"Picture"):(q.q||"").replace(/_{2,}/,"【"+(Array.isArray(q.opts[q.a])?q.opts[q.a][0]:q.opts[q.a])+"】");
+  const t=el("div","kr",(ok?"✓ ":"✗ ")+(i+1)+". "+(q.no?"(#"+q.no+") ":"")+head);t.style.fontWeight="700";
+  d.appendChild(t);
+  d.appendChild(el("div",null,"Correct: "+lbl(q,q.a)));
+  if(!ok)d.appendChild(el("div","pstat bad",pAns[i]>=0?"Your answer: "+lbl(q,pAns[i]):"Your answer: none (time ran out)"));
+  if(q.why)d.appendChild(el("div","small","💡 "+q.why));
+  box.appendChild(d);
+ });
+}
+function renderExam(){
+ clearInterval(pTimer);pTimer=null;clearTimeout(pAuto);pAuto=null;
+ $("pRead").className=pType==="reading"?"primary":"";$("pListen").className=pType==="listening"?"primary":"";
+ const box=$("pBox");box.textContent="";
+ const lvs=PR[pType].levels;
+ if(pLv<0||!lvs[pLv]){pLv=-1;pMenu(box);return}
+ if(pQ>=lvs[pLv].questions.length)pResult(box);else pQView(box);
+ try{box.scrollIntoView({block:"start"})}catch(e){}
+}
+$("pRead").onclick=()=>{pStop();pType="reading";pLv=-1;renderExam()};
+$("pListen").onclick=()=>{pStop();pType="listening";pLv=-1;renderExam()};
+
 // ---------- wiring ----------
 function refresh(reset){fillSelects();buildDeck(!reset);renderCats();renderWords();renderProg();renderPacks();checkBackup();save()}
 document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{
  document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("on",x===b));
- $("study").hidden=b.dataset.tab!=="study";$("manage").hidden=b.dataset.tab!=="manage";$("learn").hidden=b.dataset.tab!=="learn";window.scrollTo(0,0);
+ $("study").hidden=b.dataset.tab!=="study";$("manage").hidden=b.dataset.tab!=="manage";$("learn").hidden=b.dataset.tab!=="learn";$("practice").hidden=b.dataset.tab!=="practice";window.scrollTo(0,0);if(b.dataset.tab!=="practice"&&pLv>=0){pStop();pLv=-1;renderExam()}
  if(b.dataset.tab==="study")resumeTimer();else stopTimer();
  if(b.dataset.tab==="manage")renderProg();if(b.dataset.tab==="learn")renderLearn();
 });
@@ -987,7 +1123,7 @@ $("install").onclick=async()=>{if(!ip)return;try{ip.prompt();await ip.userChoice
 if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol))navigator.serviceWorker.register("./sw.js").catch(()=>{});
 applyTheme();
 $("fDir").value=P.dir;$("fMode").value=P.mode;$("fReview").checked=P.review;$("fAuto").checked=P.auto;$("fFav").checked=P.fav;$("fRom").checked=P.rom;
-fillSelects();buildDeck(false);renderCats();renderWords();renderProg();renderPacks();renderLearn();checkBackup();
+fillSelects();buildDeck(false);renderCats();renderWords();renderProg();renderPacks();renderLearn();renderExam();checkBackup();
 }
 main();
 </script>

@@ -1,0 +1,1472 @@
+{
+ "pass": 0.6,
+ "reading": {
+  "time": 60,
+  "instr": "빈칸에 들어갈 가장 알맞은 것을 고르십시오. (Choose the best word for the blank.)",
+  "levels": [
+   {
+    "title": "Level 1 · Picture words",
+    "questions": [
+     {
+      "img": "img/read-1.jpg",
+      "alt": "A printed store receipt",
+      "q": "그림을 보고 알맞은 단어를 고르십시오. (Look at the picture and choose the correct word.)",
+      "opts": [
+       [
+        "명함",
+        "business card"
+       ],
+       [
+        "지폐",
+        "banknote"
+       ],
+       [
+        "영화표",
+        "movie ticket"
+       ],
+       [
+        "영수증",
+        "receipt"
+       ]
+      ],
+      "a": 3,
+      "why": "A list of items, a total (합계) and payment → 영수증 (receipt)."
+     },
+     {
+      "img": "img/read-2.jpg",
+      "alt": "A pair of sneakers",
+      "q": "그림을 보고 알맞은 단어를 고르십시오. (Look at the picture and choose the correct word.)",
+      "opts": [
+       [
+        "양말",
+        "socks"
+       ],
+       [
+        "모자",
+        "hat"
+       ],
+       [
+        "바지",
+        "pants"
+       ],
+       [
+        "운동화",
+        "sneakers"
+       ]
+      ],
+      "a": 3,
+      "why": "운동 = exercise, 화 = shoes → 운동화 (sneakers)."
+     }
+    ]
+   },
+   {
+    "title": "Level 2 · Fill in the blank (#201–206)",
+    "questions": [
+     {
+      "no": 201,
+      "q": "가: 괜찮아요? 많이 아파 보여요.\n나: ____에 걸렸어요. 열도 나고 목도 아파요.",
+      "opts": [
+       [
+        "약",
+        "medicine"
+       ],
+       [
+        "병원",
+        "hospital"
+       ],
+       [
+        "기침",
+        "cough"
+       ],
+       [
+        "감기",
+        "cold (illness)"
+       ]
+      ],
+      "a": 3,
+      "why": "에 걸리다 = to catch (an illness). Fever + sore throat = 감기 (cold)."
+     },
+     {
+      "no": 202,
+      "q": "저는 구청에서 한국말을 배웠어요. 1월부터 6월까지 6 ____ 동안 배웠어요.",
+      "opts": [
+       [
+        "월",
+        "month name"
+       ],
+       [
+        "년",
+        "year"
+       ],
+       [
+        "개월",
+        "months (duration)"
+       ],
+       [
+        "시간",
+        "time / hours"
+       ]
+      ],
+      "a": 2,
+      "why": "Jan–June = 6 months of duration → 개월. 월 is for naming a month."
+     },
+     {
+      "no": 203,
+      "q": "저는 어제 시장에 갔어요. ____에서 과일을 샀어요.",
+      "opts": [
+       [
+        "여기",
+        "here"
+       ],
+       [
+        "거기",
+        "there / that place"
+       ],
+       [
+        "어디",
+        "where"
+       ],
+       [
+        "저기",
+        "over there"
+       ]
+      ],
+      "a": 1,
+      "why": "거기 = 'that place' already mentioned (the market)."
+     },
+     {
+      "no": 204,
+      "q": "제가 제일 좋아하는 ____은/는 가을입니다.",
+      "opts": [
+       [
+        "음식",
+        "food"
+       ],
+       [
+        "운동",
+        "exercise"
+       ],
+       [
+        "과일",
+        "fruit"
+       ],
+       [
+        "계절",
+        "season"
+       ]
+      ],
+      "a": 3,
+      "why": "가을 (autumn) is a 계절 (season)."
+     },
+     {
+      "no": 205,
+      "q": "저는 인도네시아에서 왔습니다. 제 ____은/는 인도네시아입니다.",
+      "opts": [
+       [
+        "고향",
+        "hometown"
+       ],
+       [
+        "가족",
+        "family"
+       ],
+       [
+        "이름",
+        "name"
+       ],
+       [
+        "취미",
+        "hobby"
+       ]
+      ],
+      "a": 0,
+      "why": "Where you come from = 고향 (hometown / home country)."
+     },
+     {
+      "no": 206,
+      "q": "친구가 오늘 10시 비행기로 한국에 오기 때문에 ____에 마중 가요.",
+      "opts": [
+       [
+        "항구",
+        "port"
+       ],
+       [
+        "공항",
+        "airport"
+       ],
+       [
+        "정류장",
+        "bus stop"
+       ],
+       [
+        "기차역",
+        "train station"
+       ]
+      ],
+      "a": 1,
+      "why": "비행기 (airplane) → you pick someone up at the 공항."
+     }
+    ]
+   },
+   {
+    "title": "Level 3 · Fill in the blank (#207–212)",
+    "questions": [
+     {
+      "no": 207,
+      "q": "가: 이 ____ 이름이 뭐예요?\n나: 수박이에요. 주로 여름철에 많이 먹는데, 아주 달아요.",
+      "opts": [
+       [
+        "고기",
+        "meat"
+       ],
+       [
+        "과자",
+        "snack"
+       ],
+       [
+        "과일",
+        "fruit"
+       ],
+       [
+        "식당",
+        "restaurant"
+       ]
+      ],
+      "a": 2,
+      "why": "수박 (watermelon) is a 과일 (fruit)."
+     },
+     {
+      "no": 208,
+      "q": "가: 시장에 가서 무엇을 샀어요?\n나: 아무것도 사지 않고 ____만 했어요.",
+      "opts": [
+       [
+        "물건",
+        "goods / things"
+       ],
+       [
+        "등산",
+        "hiking"
+       ],
+       [
+        "회의",
+        "meeting"
+       ],
+       [
+        "구경",
+        "sightseeing / looking around"
+       ]
+      ],
+      "a": 3,
+      "why": "Didn't buy anything, just 구경 (looking around)."
+     },
+     {
+      "no": 209,
+      "q": "가: 어디에서 살아요?\n나: 직장 동료들과 함께 회사 ____에서 살아요.",
+      "opts": [
+       [
+        "교실",
+        "classroom"
+       ],
+       [
+        "공원",
+        "park"
+       ],
+       [
+        "화장실",
+        "restroom"
+       ],
+       [
+        "기숙사",
+        "dormitory"
+       ]
+      ],
+      "a": 3,
+      "why": "Living with coworkers at the company → 기숙사 (dormitory)."
+     },
+     {
+      "no": 210,
+      "q": "저는 올해 열아홉 살입니다. ____에 스무 살이 됩니다.",
+      "opts": [
+       [
+        "나이",
+        "age"
+       ],
+       [
+        "작년",
+        "last year"
+       ],
+       [
+        "내년",
+        "next year"
+       ],
+       [
+        "어제",
+        "yesterday"
+       ]
+      ],
+      "a": 2,
+      "why": "19 now, 20 next year → 내년."
+     },
+     {
+      "no": 211,
+      "q": "가: 내일 ____이/가 어때요?\n나: 비가 오고 바람이 많이 불 거예요.",
+      "opts": [
+       [
+        "시간",
+        "time / hours"
+       ],
+       [
+        "날짜",
+        "date"
+       ],
+       [
+        "날씨",
+        "weather"
+       ],
+       [
+        "계절",
+        "season"
+       ]
+      ],
+      "a": 2,
+      "why": "Rain and wind → asking about the 날씨 (weather)."
+     },
+     {
+      "no": 212,
+      "q": "오늘은 9월 11일입니다. ____은/는 9월 12일입니다.",
+      "opts": [
+       [
+        "어제",
+        "yesterday"
+       ],
+       [
+        "내일",
+        "tomorrow"
+       ],
+       [
+        "모레",
+        "day after tomorrow"
+       ],
+       [
+        "그저께",
+        "day before yesterday"
+       ]
+      ],
+      "a": 1,
+      "why": "Today is the 11th, so the 12th is 내일 (tomorrow)."
+     }
+    ]
+   },
+   {
+    "title": "Level 4 · Fill in the blank (#213–218)",
+    "questions": [
+     {
+      "no": 213,
+      "q": "저는 ____이/가 나빠요. 그래서 안경을 쓰지 않으면 잘 안 보여요.",
+      "opts": [
+       [
+        "손",
+        "hand"
+       ],
+       [
+        "눈",
+        "eye"
+       ],
+       [
+        "귀",
+        "ear"
+       ],
+       [
+        "머리",
+        "head"
+       ]
+      ],
+      "a": 1,
+      "why": "Can't see well without glasses → 눈 (eyes)."
+     },
+     {
+      "no": 214,
+      "q": "오늘은 우리 공장에 일이 별로 없었습니다. 그래서 오늘은 기계를 한 ____만 사용했습니다.",
+      "opts": [
+       [
+        "대",
+        "counter: machines / vehicles"
+       ],
+       [
+        "병",
+        "bottle"
+       ],
+       [
+        "마리",
+        "counter: animals / fish"
+       ],
+       [
+        "켤레",
+        "counter: pairs (shoes)"
+       ]
+      ],
+      "a": 0,
+      "why": "Machines and vehicles are counted with 대."
+     },
+     {
+      "no": 215,
+      "q": "가: 공중전화를 걸려고 하는데 100원짜리 ____ 있어요?\n나: 아니요, 저도 없어요. 지폐만 있어요.",
+      "opts": [
+       [
+        "종이",
+        "paper"
+       ],
+       [
+        "동전",
+        "coin"
+       ],
+       [
+        "지갑",
+        "wallet"
+       ],
+       [
+        "가방",
+        "bag"
+       ]
+      ],
+      "a": 1,
+      "why": "100원짜리 = a 100-won coin → 동전. 'Only bills (지폐)' confirms it."
+     },
+     {
+      "no": 216,
+      "q": "가: 머리가 많이 아파요.\n나: 머리가 아프면 ____을/를 드세요. 그건 처방전 없이 약국에서 살 수 있어요.",
+      "opts": [
+       [
+        "치약",
+        "toothpaste"
+       ],
+       [
+        "두통약",
+        "headache medicine"
+       ],
+       [
+        "항생제",
+        "antibiotic"
+       ],
+       [
+        "소화제",
+        "digestive medicine"
+       ]
+      ],
+      "a": 1,
+      "why": "Headache → 두통약 (headache medicine), sold without a prescription."
+     },
+     {
+      "no": 217,
+      "q": "가: 아저씨, 이 생선 얼마예요?\n나: 한 ____에 2,000원이에요.",
+      "opts": [
+       [
+        "병",
+        "bottle"
+       ],
+       [
+        "잔",
+        "glass / cup"
+       ],
+       [
+        "시간",
+        "time / hours"
+       ],
+       [
+        "마리",
+        "counter: animals / fish"
+       ]
+      ],
+      "a": 3,
+      "why": "Fish are counted with 마리."
+     },
+     {
+      "no": 218,
+      "q": "아침에 일어나니까 ____가 많이 아팠습니다. 그래서 약국에 가서 두통약을 샀습니다.",
+      "opts": [
+       [
+        "이",
+        "tooth"
+       ],
+       [
+        "배",
+        "stomach"
+       ],
+       [
+        "머리",
+        "head"
+       ],
+       [
+        "다리",
+        "leg"
+       ]
+      ],
+      "a": 2,
+      "why": "He bought 두통약, so his 머리 (head) hurt."
+     }
+    ]
+   },
+   {
+    "title": "Level 5 · Fill in the blank (#219–224)",
+    "questions": [
+     {
+      "no": 219,
+      "q": "가: 한국의 전통 옷이 한복이지요? 한복은 언제 입어요?\n나: 설날이나 추석 같은 ____에 주로 입어요.",
+      "opts": [
+       [
+        "겨울",
+        "winter"
+       ],
+       [
+        "명절",
+        "traditional holiday"
+       ],
+       [
+        "계절",
+        "season"
+       ],
+       [
+        "결혼식",
+        "wedding"
+       ]
+      ],
+      "a": 1,
+      "why": "설날 and 추석 are 명절 (traditional holidays)."
+     },
+     {
+      "no": 220,
+      "q": "가: 회사에 외국 사람도 있어요?\n나: 네, 세 ____ 있어요.",
+      "opts": [
+       [
+        "장",
+        "counter: flat things"
+       ],
+       [
+        "명",
+        "counter: people"
+       ],
+       [
+        "개",
+        "counter: items"
+       ],
+       [
+        "권",
+        "counter: books"
+       ]
+      ],
+      "a": 1,
+      "why": "People are counted with 명."
+     },
+     {
+      "no": 221,
+      "q": "오늘은 금요일입니다. ____은/는 일요일입니다.",
+      "opts": [
+       [
+        "그제",
+        "day before yesterday"
+       ],
+       [
+        "어제",
+        "yesterday"
+       ],
+       [
+        "내일",
+        "tomorrow"
+       ],
+       [
+        "모레",
+        "day after tomorrow"
+       ]
+      ],
+      "a": 3,
+      "why": "Friday → Sunday is two days later = 모레."
+     },
+     {
+      "no": 222,
+      "q": "한국 사람은 밥하고 김치, 고기, 생선, 나물 같은 ____을 먹습니다.",
+      "opts": [
+       [
+        "그릇",
+        "bowl"
+       ],
+       [
+        "과일",
+        "fruit"
+       ],
+       [
+        "반찬",
+        "side dish"
+       ],
+       [
+        "후식",
+        "dessert"
+       ]
+      ],
+      "a": 2,
+      "why": "Kimchi, meat, fish, namul with rice = 반찬 (side dishes)."
+     },
+     {
+      "no": 223,
+      "q": "가: 더 드세요.\n나: 많이 먹었어요. ____이/가 불러서 더 먹을 수 없어요.",
+      "opts": [
+       [
+        "배",
+        "stomach"
+       ],
+       [
+        "발",
+        "foot"
+       ],
+       [
+        "눈",
+        "eye"
+       ],
+       [
+        "입",
+        "mouth"
+       ]
+      ],
+      "a": 0,
+      "why": "배가 부르다 = to be full."
+     },
+     {
+      "no": 224,
+      "q": "가: 이 약은 언제 먹는 거예요?\n나: 하루 세 ____ 드세요. 아침, 점심, 저녁 식사 후에 드시면 됩니다.",
+      "opts": [
+       [
+        "대",
+        "counter: machines / vehicles"
+       ],
+       [
+        "장",
+        "counter: flat things"
+       ],
+       [
+        "명",
+        "counter: people"
+       ],
+       [
+        "번",
+        "times / number"
+       ]
+      ],
+      "a": 3,
+      "why": "'Times' per day → 번 (하루 세 번 = 3 times a day)."
+     }
+    ]
+   },
+   {
+    "title": "Level 6 · Fill in the blank (#225–230)",
+    "questions": [
+     {
+      "no": 225,
+      "q": "가: 지수 씨는 술을 잘 마셔요?\n나: 맥주 한 ____쯤은 마실 수 있어요.",
+      "opts": [
+       [
+        "잔",
+        "glass / cup"
+       ],
+       [
+        "병",
+        "bottle"
+       ],
+       [
+        "대",
+        "counter: machines / vehicles"
+       ],
+       [
+        "마리",
+        "counter: animals / fish"
+       ]
+      ],
+      "a": 0,
+      "why": "Beer is counted by the glass: 한 잔 (a glass/cup → 잔)."
+     },
+     {
+      "no": 226,
+      "q": "가: 배가 많이 아파요.\n나: 그럼, ____에 가서 진찰을 받아 보세요.",
+      "opts": [
+       [
+        "병원",
+        "hospital"
+       ],
+       [
+        "은행",
+        "bank"
+       ],
+       [
+        "시장",
+        "market"
+       ],
+       [
+        "우체국",
+        "post office"
+       ]
+      ],
+      "a": 0,
+      "why": "Stomachache → go to the 병원 for a checkup (진찰)."
+     },
+     {
+      "no": 227,
+      "q": "가: 지금 바깥 날씨는 어때요?\n나: ____이/가 많이 오고 있어요. 우산을 가지고 나가야 돼요.",
+      "opts": [
+       [
+        "비",
+        "rain"
+       ],
+       [
+        "구름",
+        "cloud"
+       ],
+       [
+        "안개",
+        "fog"
+       ],
+       [
+        "바람",
+        "wind"
+       ]
+      ],
+      "a": 0,
+      "why": "Need an umbrella → 비 (rain)."
+     },
+     {
+      "no": 228,
+      "q": "가: 손을 씻고 싶은데요. ____ 있으면 좀 주시겠어요?\n나: 네, 여기 있어요.",
+      "opts": [
+       [
+        "장갑",
+        "gloves"
+       ],
+       [
+        "비누",
+        "soap"
+       ],
+       [
+        "거울",
+        "mirror"
+       ],
+       [
+        "치약",
+        "toothpaste"
+       ]
+      ],
+      "a": 1,
+      "why": "To wash your hands you need 비누 (soap)."
+     },
+     {
+      "no": 229,
+      "q": "가: 세탁기가 고장 났어요. ____을/를 어떻게 하지요?\n나: 오늘은 손으로 빨고 내일 수리 센터에 전화해요.",
+      "opts": [
+       [
+        "목욕",
+        "bath"
+       ],
+       [
+        "요리",
+        "cooking"
+       ],
+       [
+        "빨래",
+        "laundry"
+       ],
+       [
+        "운전",
+        "driving"
+       ]
+      ],
+      "a": 2,
+      "why": "Washing machine broke → what to do about the 빨래 (laundry)?"
+     },
+     {
+      "no": 230,
+      "q": "여기는 교통 ____가 많이 나는 곳입니다. 조심해서 운전하십시오.",
+      "opts": [
+       [
+        "신호",
+        "signal"
+       ],
+       [
+        "지도",
+        "map"
+       ],
+       [
+        "사고",
+        "accident"
+       ],
+       [
+        "주차",
+        "parking"
+       ]
+      ],
+      "a": 2,
+      "why": "교통사고 = traffic accident."
+     }
+    ]
+   },
+   {
+    "title": "Level 7 · Fill in the blank (#231–236)",
+    "questions": [
+     {
+      "no": 231,
+      "q": "열아홉 ____이 안 된 청소년에게 담배를 팔면 안 됩니다.",
+      "opts": [
+       [
+        "잔",
+        "glass / cup"
+       ],
+       [
+        "살",
+        "years old"
+       ],
+       [
+        "명",
+        "counter: people"
+       ],
+       [
+        "층",
+        "floor"
+       ]
+      ],
+      "a": 1,
+      "why": "Age is counted with 살: 열아홉 살 = 19 years old."
+     },
+     {
+      "no": 232,
+      "q": "제 ____은/는 1986년 6월 4일입니다.",
+      "opts": [
+       [
+        "고향",
+        "hometown"
+       ],
+       [
+        "나이",
+        "age"
+       ],
+       [
+        "생일",
+        "birthday"
+       ],
+       [
+        "이름",
+        "name"
+       ]
+      ],
+      "a": 2,
+      "why": "A full date of birth → 생일 (birthday)."
+     },
+     {
+      "no": 233,
+      "q": "가: 내일이 아버지 생신이에요. ____을/를 사야 하는데 뭐가 좋을까요?\n나: 글쎄요. 넥타이나 지갑이 좋을 것 같은데요.",
+      "opts": [
+       [
+        "양복",
+        "suit"
+       ],
+       [
+        "선물",
+        "gift"
+       ],
+       [
+        "소포",
+        "parcel"
+       ],
+       [
+        "편지",
+        "letter"
+       ]
+      ],
+      "a": 1,
+      "why": "Father's birthday + necktie/wallet ideas → 선물 (gift)."
+     },
+     {
+      "no": 234,
+      "q": "가: 저 식당에는 항상 ____이/가 많지요?\n나: 네, 줄을 서서 기다리는 사람도 있어요. 음식이 맛이 있나 봐요.",
+      "opts": [
+       [
+        "친구",
+        "friend"
+       ],
+       [
+        "주인",
+        "owner"
+       ],
+       [
+        "손님",
+        "customer"
+       ],
+       [
+        "가족",
+        "family"
+       ]
+      ],
+      "a": 2,
+      "why": "A restaurant with a line → many 손님 (customers)."
+     },
+     {
+      "no": 235,
+      "q": "가: 중국에 ____을 하려고 왔는데요.\n나: 얼마나 보내실 거예요?",
+      "opts": [
+       [
+        "송금",
+        "sending money"
+       ],
+       [
+        "환전",
+        "currency exchange"
+       ],
+       [
+        "통장",
+        "bankbook"
+       ],
+       [
+        "사진",
+        "photo"
+       ]
+      ],
+      "a": 0,
+      "why": "'How much will you send?' → 송금 (sending money)."
+     },
+     {
+      "no": 236,
+      "q": "가: 오늘 ____이/가 있으면 같이 식사할래요?\n나: 미안해요. 오늘은 친구랑 영화를 보러 가기로 했어요.",
+      "opts": [
+       [
+        "시간",
+        "time / hours"
+       ],
+       [
+        "약속",
+        "appointment / plans"
+       ],
+       [
+        "계산",
+        "payment"
+       ],
+       [
+        "날짜",
+        "date"
+       ]
+      ],
+      "a": 0,
+      "why": "시간이 있으면 = if you have time."
+     }
+    ]
+   },
+   {
+    "title": "Level 8 · Fill in the blank (#237–242)",
+    "questions": [
+     {
+      "no": 237,
+      "q": "가: 경주에 가는 기차는 언제 출발해요?\n나: 11시에 출발해요.\n가: 그럼 지금 10시니까 한 ____(이)나 기다려야겠군요.",
+      "opts": [
+       [
+        "시",
+        "o'clock"
+       ],
+       [
+        "번",
+        "times / number"
+       ],
+       [
+        "분",
+        "minutes"
+       ],
+       [
+        "시간",
+        "time / hours"
+       ]
+      ],
+      "a": 3,
+      "why": "10:00 → 11:00 is one hour: 한 시간. (시 is only for clock time.)"
+     },
+     {
+      "no": 238,
+      "q": "가: 어디에서 점심을 먹을까요?\n나: 회사 근처에 김치찌개를 잘하는 ____이/가 있어요. 거기로 갈까요?",
+      "opts": [
+       [
+        "식당",
+        "restaurant"
+       ],
+       [
+        "요리",
+        "cooking"
+       ],
+       [
+        "커피숍",
+        "coffee shop"
+       ],
+       [
+        "도서관",
+        "library"
+       ]
+      ],
+      "a": 0,
+      "why": "A place that makes good kimchi stew → 식당 (restaurant)."
+     },
+     {
+      "no": 239,
+      "q": "도로나 공원에 ____를 버리면 안 됩니다. 공공장소는 깨끗이 사용해야 합니다.",
+      "opts": [
+       [
+        "나무",
+        "tree"
+       ],
+       [
+        "자판기",
+        "vending machine"
+       ],
+       [
+        "쓰레기",
+        "trash"
+       ],
+       [
+        "공중전화",
+        "payphone"
+       ]
+      ],
+      "a": 2,
+      "why": "Don't throw 쓰레기 (trash) in public places."
+     },
+     {
+      "no": 240,
+      "q": "저는 눈이 나쁩니다. 그래서 책을 볼 때 ____을/를 끼어야 합니다.",
+      "opts": [
+       [
+        "구두",
+        "dress shoes"
+       ],
+       [
+        "안경",
+        "glasses"
+       ],
+       [
+        "장갑",
+        "gloves"
+       ],
+       [
+        "모자",
+        "hat"
+       ]
+      ],
+      "a": 1,
+      "why": "Bad eyesight → wear 안경 (glasses)."
+     },
+     {
+      "no": 241,
+      "q": "가: 내일 시간 있어요? 내일 좀 만나고 싶은데요.\n나: 죄송해요. 내일은 제가 ____이/가 있어요. 고향 친구들을 만나기로 했어요.",
+      "opts": [
+       [
+        "약속",
+        "appointment / plans"
+       ],
+       [
+        "고향",
+        "hometown"
+       ],
+       [
+        "회의",
+        "meeting"
+       ],
+       [
+        "전화",
+        "phone call"
+       ]
+      ],
+      "a": 0,
+      "why": "약속이 있다 = to have plans / an appointment."
+     },
+     {
+      "no": 242,
+      "q": "오늘은 일요일입니다. ____은/는 토요일이었습니다.",
+      "opts": [
+       [
+        "내일",
+        "tomorrow"
+       ],
+       [
+        "모레",
+        "day after tomorrow"
+       ],
+       [
+        "어제",
+        "yesterday"
+       ],
+       [
+        "그저께",
+        "day before yesterday"
+       ]
+      ],
+      "a": 2,
+      "why": "Today is Sunday; Saturday was yesterday = 어제."
+     }
+    ]
+   }
+  ]
+ },
+ "listening": {
+  "time": 30,
+  "levels": [
+   {
+    "title": "Level 1 · Q&A",
+    "questions": [
+     {
+      "q": "이름이 뭐예요?",
+      "tr": "What's your name?",
+      "opts": [
+       [
+        "저는 필리핀 사람이에요.",
+        "I'm Filipino."
+       ],
+       [
+        "마이클이에요.",
+        "I'm Michael."
+       ],
+       [
+        "스물세 살이에요.",
+        "I'm 23 years old."
+       ],
+       [
+        "공장에 가요.",
+        "I'm going to the factory."
+       ]
+      ],
+      "a": 1
+     },
+     {
+      "q": "어디에서 일해요?",
+      "tr": "Where do you work?",
+      "opts": [
+       [
+        "공장에서 일해요.",
+        "I work at a factory."
+       ],
+       [
+        "월요일에 일해요.",
+        "I work on Monday."
+       ],
+       [
+        "친구하고 일해요.",
+        "I work with a friend."
+       ],
+       [
+        "아주 많이 일해요.",
+        "I work a lot."
+       ]
+      ],
+      "a": 0
+     },
+     {
+      "q": "지금 몇 시예요?",
+      "tr": "What time is it now?",
+      "opts": [
+       [
+        "삼천 원이에요.",
+        "It's 3,000 won."
+       ],
+       [
+        "열 시예요.",
+        "It's 10 o'clock."
+       ],
+       [
+        "월요일이에요.",
+        "It's Monday."
+       ],
+       [
+        "스물두 살이에요.",
+        "I'm 22 years old."
+       ]
+      ],
+      "a": 1
+     },
+     {
+      "q": "이거 얼마예요?",
+      "tr": "How much is this?",
+      "opts": [
+       [
+        "세 개예요.",
+        "It's three pieces."
+       ],
+       [
+        "삼천 원이에요.",
+        "It's 3,000 won."
+       ],
+       [
+        "세 시예요.",
+        "It's 3 o'clock."
+       ],
+       [
+        "삼월이에요.",
+        "It's March."
+       ]
+      ],
+      "a": 1
+     },
+     {
+      "q": "화장실이 어디예요?",
+      "tr": "Where is the restroom?",
+      "opts": [
+       [
+        "저기에 있어요.",
+        "It's over there."
+       ],
+       [
+        "네, 감사합니다.",
+        "Yes, thank you."
+       ],
+       [
+        "내일이에요.",
+        "It's tomorrow."
+       ],
+       [
+        "만 원이에요.",
+        "It's 10,000 won."
+       ]
+      ],
+      "a": 0
+     }
+    ]
+   },
+   {
+    "title": "Level 2 · Q&A",
+    "questions": [
+     {
+      "q": "오늘 무슨 요일이에요?",
+      "tr": "What day is it today?",
+      "opts": [
+       [
+        "오월이에요.",
+        "It's May."
+       ],
+       [
+        "수요일이에요.",
+        "It's Wednesday."
+       ],
+       [
+        "오후 세 시예요.",
+        "It's 3 PM."
+       ],
+       [
+        "이천이십육 년이에요.",
+        "It's the year 2026."
+       ]
+      ],
+      "a": 1
+     },
+     {
+      "q": "몇 살이에요?",
+      "tr": "How old are you?",
+      "opts": [
+       [
+        "스물다섯 살이에요.",
+        "I'm 25 years old."
+       ],
+       [
+        "이십오 번이에요.",
+        "It's number 25."
+       ],
+       [
+        "오 층이에요.",
+        "It's the 5th floor."
+       ],
+       [
+        "오 분이에요.",
+        "It's 5 minutes."
+       ]
+      ],
+      "a": 0
+     },
+     {
+      "q": "어디가 아파요?",
+      "tr": "Where does it hurt?",
+      "opts": [
+       [
+        "머리가 아파요.",
+        "My head hurts."
+       ],
+       [
+        "내일 가요.",
+        "I'm going tomorrow."
+       ],
+       [
+        "사과예요.",
+        "It's an apple."
+       ],
+       [
+        "한국 사람이에요.",
+        "I'm Korean."
+       ]
+      ],
+      "a": 0
+     },
+     {
+      "q": "점심 먹었어요?",
+      "tr": "Did you eat lunch?",
+      "opts": [
+       [
+        "네, 먹었어요.",
+        "Yes, I ate."
+       ],
+       [
+        "네, 월요일이에요.",
+        "Yes, it's Monday."
+       ],
+       [
+        "아니요, 사천 원이에요.",
+        "No, it's 4,000 won."
+       ],
+       [
+        "아니요, 학교예요.",
+        "No, it's a school."
+       ]
+      ],
+      "a": 0
+     },
+     {
+      "q": "주말에 뭐 해요?",
+      "tr": "What do you do on the weekend?",
+      "opts": [
+       [
+        "아주 비싸요.",
+        "It's very expensive."
+       ],
+       [
+        "친구를 만나요.",
+        "I meet a friend."
+       ],
+       [
+        "이천 원이에요.",
+        "It's 2,000 won."
+       ],
+       [
+        "아주 작아요.",
+        "It's very small."
+       ]
+      ],
+      "a": 1
+     }
+    ]
+   },
+   {
+    "title": "Level 3 · Q&A",
+    "questions": [
+     {
+      "q": "내일 몇 시에 만날까요?",
+      "tr": "What time shall we meet tomorrow?",
+      "opts": [
+       [
+        "세 시에 만나요.",
+        "Let's meet at 3 o'clock."
+       ],
+       [
+        "삼 일에 만나요.",
+        "Let's meet on the 3rd."
+       ],
+       [
+        "어제 만났어요.",
+        "We met yesterday."
+       ],
+       [
+        "시장에서 샀어요.",
+        "I bought it at the market."
+       ]
+      ],
+      "a": 0
+     },
+     {
+      "q": "이 약은 하루에 몇 번 먹어요?",
+      "tr": "How many times a day do I take this medicine?",
+      "opts": [
+       [
+        "세 번 먹어요.",
+        "Three times."
+       ],
+       [
+        "삼천 원이에요.",
+        "It's 3,000 won."
+       ],
+       [
+        "세 명이에요.",
+        "Three people."
+       ],
+       [
+        "아침에 가요.",
+        "I go in the morning."
+       ]
+      ],
+      "a": 0
+     },
+     {
+      "q": "월급날이 언제예요?",
+      "tr": "When is payday?",
+      "opts": [
+       [
+        "십오 일이에요.",
+        "It's the 15th."
+       ],
+       [
+        "십오 명이에요.",
+        "It's 15 people."
+       ],
+       [
+        "열다섯 살이에요.",
+        "I'm 15 years old."
+       ],
+       [
+        "십오 층이에요.",
+        "It's the 15th floor."
+       ]
+      ],
+      "a": 0
+     },
+     {
+      "q": "한국에 온 지 얼마나 됐어요?",
+      "tr": "How long has it been since you came to Korea?",
+      "opts": [
+       [
+        "일 년 됐어요.",
+        "It's been one year."
+       ],
+       [
+        "일 번 됐어요.",
+        "It's been number one."
+       ],
+       [
+        "한 개 있어요.",
+        "I have one."
+       ],
+       [
+        "한국 사람이에요.",
+        "I'm Korean."
+       ]
+      ],
+      "a": 0
+     },
+     {
+      "q": "많이 아파요? 병원에 갈까요?",
+      "tr": "Does it hurt a lot? Shall we go to the hospital?",
+      "opts": [
+       [
+        "네, 같이 가요.",
+        "Yes, let's go together."
+       ],
+       [
+        "네, 삼천 원이에요.",
+        "Yes, it's 3,000 won."
+       ],
+       [
+        "아니요, 월요일이에요.",
+        "No, it's Monday."
+       ],
+       [
+        "네, 공장이에요.",
+        "Yes, it's a factory."
+       ]
+      ],
+      "a": 0
+     }
+    ]
+   }
+  ]
+ }
+}
