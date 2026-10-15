@@ -1,5 +1,5 @@
 const C="eps-topik-v12";
-const FILES=["./","./index.html","./manifest.webmanifest","./icon-192.png","./icon-512.png","./vocab.json","./practice.json","./img/read-1.jpg","./img/read-2.jpg"];
+const FILES=["./","./index.html","./manifest.webmanifest","./icon-192.png","./icon-512.png","./vocab.json","./practice.json"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(C).then(c=>Promise.all(FILES.map(f=>c.add(f).catch(()=>{})))).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
 // Cache first (works offline), refreshes the cache quietly in the background.
