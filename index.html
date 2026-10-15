@@ -263,6 +263,7 @@ catch(e){document.body.innerHTML='<main><h1>Can\u2019t load vocab.json</h1><p>Op
 const DEF=V.default,PACKS=V.packs;
 let PR={pass:.6,reading:{time:60,instr:"",levels:[]},listening:{time:30,instr:"",levels:[]}};
 try{const r=await fetch("practice.json",{cache:"no-cache"});if(r.ok){const j=await r.json();if(j&&typeof j==="object"){PR.pass=Number(j.pass)||.6;["reading","listening"].forEach(k=>{const x=j[k];if(x&&Array.isArray(x.levels))PR[k]={time:Number(x.time)||60,instr:x.instr||"",levels:x.levels.filter(l=>l&&Array.isArray(l.questions)&&l.questions.length)}})}}}catch(e){}
+for(const pf of ["pics.json","pics2.json"]){try{const r=await fetch(pf);if(r.ok){const m=await r.json();["reading","listening"].forEach(k=>PR[k].levels.forEach(l=>l.questions.forEach(q=>{if(q&&q.img&&m[q.img])q.img=m[q.img]})))}}catch(e){}}
 const $=id=>document.getElementById(id);
 const KEY="epsTopikNotebook.v2";
 const ROM=Object.create(null);DEF.concat(PACKS).forEach(([c,l])=>l.forEach(x=>{if(x[2])ROM[x[0]]=x[2]}));
