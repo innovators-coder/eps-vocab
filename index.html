@@ -1010,9 +1010,9 @@ function beep2(done){
   setTimeout(done,1000);
  }catch(e){done()}
 }
-const pScroll={reading:0,listening:0};
-function pBack(){pStop();pLv=-1;renderExam();const y=pScroll[pType]||0;requestAnimationFrame(()=>{window.scrollTo(0,y);requestAnimationFrame(()=>window.scrollTo(0,y))})}
-function pStart(i){pStop();unlockAudio();pLv=i;pQ=0;pAns=[];renderExam()}
+const pLast={reading:-1,listening:-1};
+function pBack(){pStop();pLv=-1;renderExam()}
+function pStart(i){pStop();unlockAudio();pLast[pType]=i;pLv=i;pQ=0;pAns=[];renderExam()}
 function pMenu(box){
  const cfg=PR[pType];
  box.appendChild(el("h2",null,pType==="reading"?"📖 Reading":"🎧 Listening"));
@@ -1025,7 +1025,9 @@ function pMenu(box){
   const b=el("button","plevel"),l=el("div"),t=el("b",null,lv.title||("Level "+(i+1)));
   l.append(t,el("br"),el("span","small",n+" questions"+(best!=null?` · Best ${best}/${n}`:"")));
   b.append(l,el("span",passed?"pstat":"small",passed?"✓ Passed":"Start →"));
-  b.onclick=()=>pStart(i);box.appendChild(b);
+     b.onclick=()=>pStart(i);if(i===pLast[pType])b.id="lastLv";box.appendChild(b);
+  });
+  {const lb=document.getElementById("lastLv");if(lb)requestAnimationFrame(()=>lb.scrollIntoView({block:"center"}))}
  });
 }
 function pQView(box){
