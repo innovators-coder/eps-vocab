@@ -1028,7 +1028,6 @@ function pMenu(box){
      b.onclick=()=>pStart(i);if(i===pLast[pType])b.id="lastLv";box.appendChild(b);
   });
   {const lb=document.getElementById("lastLv");if(lb)requestAnimationFrame(()=>lb.scrollIntoView({block:"center"}))}
- });
 }
 function pQView(box){
  const cfg=PR[pType],lv=cfg.levels[pLv],q=lv.questions[pQ],n=lv.questions.length,isL=pType==="listening";
