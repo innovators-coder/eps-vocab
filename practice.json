@@ -4222,7 +4222,1165 @@
     ]
    },
    {
-    "title": "Level 28 · Fill in the blank (#201–206)",
+    "title": "Level 28 · Pictures (#158–163)",
+    "questions": [
+     {
+      "no": 158,
+      "img": "pic158",
+      "alt": "Picture for question 158",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "여자가 불을 켜고 있습니다.",
+        "The woman is turning on a light"
+       ],
+       [
+        "여자가 물을 붓고 있습니다.",
+        "The woman is pouring water"
+       ],
+       [
+        "여자가 그림을 걸고 있습니다.",
+        "The woman is hanging a picture"
+       ],
+       [
+        "여자가 창문을 닫고 있습니다.",
+        "The woman is closing the window"
+       ]
+      ],
+      "a": 3,
+      "why": "창문 = window; 닫다 = to close."
+     },
+     {
+      "no": 159,
+      "img": "pic159",
+      "alt": "Picture for question 159",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "린 씨가 나이가 제일 적습니다.",
+        "Lin is the youngest"
+       ],
+       [
+        "수지 씨가 나이가 제일 많습니다.",
+        "Suji is the oldest"
+       ],
+       [
+        "리아 씨가 린 씨보다 7살 적습니다.",
+        "Lia is 7 years younger than Lin"
+       ],
+       [
+        "수지 씨가 린 씨보다 3살 많습니다.",
+        "Suji is 3 years older than Lin"
+       ]
+      ],
+      "a": 2,
+      "why": "수지 33, 리아 29, 린 36 → 린 is the oldest; 36 − 29 = 7."
+     },
+     {
+      "no": 160,
+      "img": "pic160",
+      "alt": "Picture for question 160",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "자동차를 고치고 있습니다.",
+        "Repairing a car"
+       ],
+       [
+        "자동차를 운전하고 있습니다.",
+        "Driving a car"
+       ],
+       [
+        "비눗물로 자동차를 닦고 있습니다.",
+        "Washing a car with soapy water"
+       ],
+       [
+        "자동차 타이어를 바꾸고 있습니다.",
+        "Changing a car tire"
+       ]
+      ],
+      "a": 2,
+      "why": "비눗물 = soapy water."
+     },
+     {
+      "no": 161,
+      "img": "pic161",
+      "alt": "Picture for question 161",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "삽과 곡괭이를 이용하여 땅을 파고 있습니다.",
+        "Digging the ground with shovels and pickaxes"
+       ],
+       [
+        "손수레를 이용하여 물건을 운반하고 있습니다.",
+        "Carrying goods with a hand cart"
+       ],
+       [
+        "불도저를 이용하여 도로 공사를 하고 있습니다.",
+        "Doing road work with a bulldozer"
+       ],
+       [
+        "빗자루와 쓰레받기를 이용하여 청소하고 있습니다.",
+        "Cleaning with brooms and dustpans"
+       ]
+      ],
+      "a": 3,
+      "why": "빗자루 = broom; 쓰레받기 = dustpan."
+     },
+     {
+      "no": 162,
+      "img": "pic162",
+      "alt": "Picture for question 162",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "아주머니들이 물건을 팔고 있습니다.",
+        "The women are selling goods"
+       ],
+       [
+        "경찰들이 교통정리를 하고 있습니다.",
+        "Police are directing traffic"
+       ],
+       [
+        "학생들이 횡단보도를 건너고 있습니다.",
+        "Students are crossing the crosswalk"
+       ],
+       [
+        "아저씨들이 거리 청소를 하고 있습니다.",
+        "The men are cleaning the street"
+       ]
+      ],
+      "a": 3,
+      "why": "거리 청소 = street cleaning."
+     },
+     {
+      "no": 163,
+      "img": "pic163",
+      "alt": "Picture for question 163",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "약국에서 약사가 약을 짓고 있습니다.",
+        "A pharmacist is preparing medicine at a pharmacy"
+       ],
+       [
+        "주유소에서 직원이 기름을 넣고 있습니다.",
+        "An attendant is putting gas in a car at a gas station"
+       ],
+       [
+        "시장에서 아주머니가 과일을 팔고 있습니다.",
+        "A woman is selling fruit at a market"
+       ],
+       [
+        "버스 정류장에서 학생이 버스를 기다리고 있습니다.",
+        "A student is waiting for a bus at a bus stop"
+       ]
+      ],
+      "a": 3,
+      "why": "Street with a bus-stop sign and a person waiting. (The photo is hard to read — check the book.)"
+     }
+    ]
+   },
+   {
+    "title": "Level 29 · Pictures (#164–169)",
+    "questions": [
+     {
+      "no": 164,
+      "img": "pic164",
+      "alt": "Picture for question 164",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "운동장에서 축구를 하고 있습니다.",
+        "Playing soccer on the field"
+       ],
+       [
+        "우체국에서 소포를 포장하고 있습니다.",
+        "Packing a parcel at the post office"
+       ],
+       [
+        "건축 공사장에서 건물을 짓고 있습니다.",
+        "Building a building at a construction site"
+       ],
+       [
+        "공장에서 전기 부품을 조립하고 있습니다.",
+        "Assembling electric parts at a factory"
+       ]
+      ],
+      "a": 3,
+      "why": "조립하다 = to assemble."
+     },
+     {
+      "no": 165,
+      "img": "pic165",
+      "alt": "Picture for question 165",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "어린이들이 놀이터에서 놀고 있습니다.",
+        "Children are playing at a playground"
+       ],
+       [
+        "사람들이 고층 건물의 창문을 닦고 있습니다.",
+        "People are cleaning the windows of a high-rise building"
+       ],
+       [
+        "소방관들이 고층 건물의 불을 끄고 있습니다.",
+        "Firefighters are putting out a fire in a high-rise"
+       ],
+       [
+        "소방관들이 다친 사람을 구해 내고 있습니다.",
+        "Firefighters are rescuing an injured person"
+       ]
+      ],
+      "a": 1,
+      "why": "고층 건물 = high-rise building. (Check the book.)"
+     },
+     {
+      "no": 166,
+      "img": "pic166",
+      "alt": "Picture for question 166",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "새 아파트를 짓고 있습니다.",
+        "Building a new apartment"
+       ],
+       [
+        "트럭으로 나무를 운반하고 있습니다.",
+        "Carrying wood by truck"
+       ],
+       [
+        "사다리로 이삿짐을 옮기고 있습니다.",
+        "Moving household goods using a ladder lift"
+       ],
+       [
+        "아파트 벽에 페인트를 칠하고 있습니다.",
+        "Painting an apartment wall"
+       ]
+      ],
+      "a": 2,
+      "why": "이삿짐 = moving goods."
+     },
+     {
+      "no": 167,
+      "img": "pic167",
+      "alt": "Picture for question 167",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "남자가 기계를 수리하고 있습니다.",
+        "A man is repairing a machine"
+       ],
+       [
+        "남자가 이삿짐을 운반하고 있습니다.",
+        "A man is carrying moving boxes"
+       ],
+       [
+        "남자가 트럭에 가구를 싣고 있습니다.",
+        "A man is loading furniture onto a truck"
+       ],
+       [
+        "남자가 책상 앞에서 책을 읽고 있습니다.",
+        "A man is reading a book at a desk"
+       ]
+      ],
+      "a": 1,
+      "why": "운반하다 = to carry / transport."
+     },
+     {
+      "no": 168,
+      "img": "pic168",
+      "alt": "Picture for question 168",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "남자가 가구를 만들고 있습니다.",
+        "A man is making furniture"
+       ],
+       [
+        "남자가 한국말을 가르치고 있습니다.",
+        "A man is teaching Korean"
+       ],
+       [
+        "남자가 컴퓨터를 수리하고 있습니다.",
+        "A man is repairing a computer"
+       ],
+       [
+        "남자가 컴퓨터를 포장하고 있습니다.",
+        "A man is packing a computer"
+       ]
+      ],
+      "a": 3,
+      "why": "포장하다 = to pack / wrap."
+     },
+     {
+      "no": 169,
+      "img": "pic169",
+      "alt": "Picture for question 169",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "구두를 신고 계단을 올라가고 있습니다.",
+        "Going up the stairs in dress shoes"
+       ],
+       [
+        "물걸레를 사용하여 탁자를 닦고 있습니다.",
+        "Wiping a table with a wet mop"
+       ],
+       [
+        "걸레를 탈수기에 넣어서 물을 짜고 있습니다.",
+        "Putting a mop in a wringer and squeezing out the water"
+       ],
+       [
+        "구두약을 발라서 구두를 깨끗이 닦고 있습니다.",
+        "Polishing shoes clean with shoe polish"
+       ]
+      ],
+      "a": 2,
+      "why": "탈수기 = wringer; 짜다 = to squeeze out."
+     }
+    ]
+   },
+   {
+    "title": "Level 30 · Pictures (#170–175)",
+    "questions": [
+     {
+      "no": 170,
+      "img": "pic170",
+      "alt": "Picture for question 170",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "옷을 세탁하는 세탁기입니다.",
+        "A washing machine that washes clothes"
+       ],
+       [
+        "계산할 때 쓰는 계산기입니다.",
+        "A calculator used for calculating"
+       ],
+       [
+        "여행할 때 타는 비행기입니다.",
+        "An airplane you take when traveling"
+       ],
+       [
+        "물건을 운반하는 기중기입니다.",
+        "A crane that carries goods"
+       ]
+      ],
+      "a": 3,
+      "why": "기중기 = crane."
+     },
+     {
+      "no": 171,
+      "img": "pic171",
+      "alt": "Picture for question 171",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "땅을 팔 때 사용하는 굴삭기입니다.",
+        "An excavator used to dig the ground"
+       ],
+       [
+        "불을 끌 때 사용하는 소방차입니다.",
+        "A fire truck used to put out fires"
+       ],
+       [
+        "높은 곳에 올라갈 때 쓰는 사다리입니다.",
+        "A ladder used to climb to high places"
+       ],
+       [
+        "무거운 짐을 운반할 때 쓰는 지게차입니다.",
+        "A forklift used to carry heavy loads"
+       ]
+      ],
+      "a": 0,
+      "why": "굴삭기 = excavator."
+     },
+     {
+      "no": 172,
+      "img": "pic172",
+      "alt": "Picture for question 172",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "짐을 실어 나르는 화물 열차입니다.",
+        "A freight train that carries cargo"
+       ],
+       [
+        "석유나 가솔린을 실어 나르는 배입니다.",
+        "A ship that carries oil or gasoline"
+       ],
+       [
+        "무거운 물건을 실어 나르는 지게차입니다.",
+        "A forklift that carries heavy things"
+       ],
+       [
+        "돌이나 모래를 운반하는 화물 트럭입니다.",
+        "A cargo truck that carries stones or sand"
+       ]
+      ],
+      "a": 2,
+      "why": "지게차 = forklift."
+     },
+     {
+      "no": 173,
+      "img": "pic173",
+      "alt": "Picture for question 173",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "종이를 자를 때 사용하는 칼입니다.",
+        "A knife used to cut paper"
+       ],
+       [
+        "나무를 자를 때 사용하는 톱입니다.",
+        "A saw used to cut wood"
+       ],
+       [
+        "쇠를 자를 때 사용하는 절단기입니다.",
+        "A cutter used to cut iron"
+       ],
+       [
+        "머리를 자를 때 사용하는 가위입니다.",
+        "Scissors used to cut hair"
+       ]
+      ],
+      "a": 1,
+      "why": "톱 = saw."
+     },
+     {
+      "no": 174,
+      "img": "pic174",
+      "alt": "Picture for question 174",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "먼지나 쓰레기를 쓸어 내는 빗자루입니다.",
+        "A broom that sweeps away dust and trash"
+       ],
+       [
+        "전선이나 철사를 자를 때 쓰는 니퍼입니다.",
+        "Nippers used to cut wires"
+       ],
+       [
+        "못을 박거나 못을 뺄 때 쓰는 장도리입니다.",
+        "A hammer used to drive or remove nails"
+       ],
+       [
+        "나무나 종이에 구멍을 낼 때 쓰는 송곳입니다.",
+        "An awl used to make holes in wood or paper"
+       ]
+      ],
+      "a": 2,
+      "why": "장도리 = hammer (for nails)."
+     },
+     {
+      "no": 175,
+      "img": "pic175",
+      "alt": "Picture for question 175",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "먼지나 쓰레기를 쓸어 내는 빗자루입니다.",
+        "A broom that sweeps away dust and trash"
+       ],
+       [
+        "전선이나 철사를 자를 때 쓰는 니퍼입니다.",
+        "Nippers used to cut wires"
+       ],
+       [
+        "못을 박거나 못을 뺄 때 쓰는 장도리입니다.",
+        "A hammer used to drive or remove nails"
+       ],
+       [
+        "나무나 종이에 구멍을 낼 때 쓰는 송곳입니다.",
+        "An awl used to make holes in wood or paper"
+       ]
+      ],
+      "a": 0,
+      "why": "빗자루 = broom."
+     }
+    ]
+   },
+   {
+    "title": "Level 31 · Pictures (#176–180)",
+    "questions": [
+     {
+      "no": 176,
+      "img": "pic176",
+      "alt": "Picture for question 176",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "먼지나 쓰레기를 쓸어 내는 빗자루입니다.",
+        "A broom that sweeps away dust and trash"
+       ],
+       [
+        "전선이나 철사를 자를 때 쓰는 니퍼입니다.",
+        "Nippers used to cut wires"
+       ],
+       [
+        "못을 박거나 못을 뺄 때 쓰는 장도리입니다.",
+        "A hammer used to drive or remove nails"
+       ],
+       [
+        "나무나 종이에 구멍을 낼 때 쓰는 송곳입니다.",
+        "An awl used to make holes in wood or paper"
+       ]
+      ],
+      "a": 3,
+      "why": "송곳 = awl (a pointed tool for making holes)."
+     },
+     {
+      "no": 177,
+      "img": "pic177",
+      "alt": "Picture for question 177",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "먼지나 쓰레기를 쓸어 내는 빗자루입니다.",
+        "A broom that sweeps away dust and trash"
+       ],
+       [
+        "전선이나 철사를 자를 때 쓰는 니퍼입니다.",
+        "Nippers used to cut wires"
+       ],
+       [
+        "못을 박거나 못을 뺄 때 쓰는 장도리입니다.",
+        "A hammer used to drive or remove nails"
+       ],
+       [
+        "나무나 종이에 구멍을 낼 때 쓰는 송곳입니다.",
+        "An awl used to make holes in wood or paper"
+       ]
+      ],
+      "a": 1,
+      "why": "니퍼 = nippers / wire cutters."
+     },
+     {
+      "no": 178,
+      "img": "pic178",
+      "alt": "Picture for question 178",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "밥이나 반찬을 담을 수 있는 그릇입니다.",
+        "A bowl that holds rice or side dishes"
+       ],
+       [
+        "작은 그릇들을 받쳐 들 때 쓰는 쟁반입니다.",
+        "A tray used to carry small bowls"
+       ],
+       [
+        "먼지나 쓰레기를 쓸어 담는 쓰레받기입니다.",
+        "A dustpan that collects dust and trash"
+       ],
+       [
+        "무거운 물건을 운반할 때 쓰는 손수레입니다.",
+        "A hand cart used to carry heavy things"
+       ]
+      ],
+      "a": 2,
+      "why": "쓰레받기 = dustpan."
+     },
+     {
+      "no": 179,
+      "img": "pic179",
+      "alt": "Picture for question 179",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "먼지를 떨어 내는 먼지떨이입니다.",
+        "A duster that shakes off dust"
+       ],
+       [
+        "쓰레기를 쓸어 담는 쓰레받기입니다.",
+        "A dustpan that collects trash"
+       ],
+       [
+        "연필 등을 꽂아 두는 연필꽂이입니다.",
+        "A pencil holder"
+       ],
+       [
+        "구두를 신을 때 사용하는 구둣주걱입니다.",
+        "A shoehorn used when putting on shoes"
+       ]
+      ],
+      "a": 0,
+      "why": "먼지떨이 = duster."
+     },
+     {
+      "no": 180,
+      "img": "pic180",
+      "alt": "Picture for question 180",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "땅을 파고 흙을 뜨는 데 사용하는 삽입니다.",
+        "A shovel for digging and scooping soil"
+       ],
+       [
+        "나무나 금속에 구멍을 뚫는 전기드릴입니다.",
+        "An electric drill that makes holes in wood or metal"
+       ],
+       [
+        "바지나 셔츠 등을 다릴 수 있는 다리미입니다.",
+        "An iron for pressing pants and shirts"
+       ],
+       [
+        "사무실이나 공장을 청소할 때 쓰는 청소기입니다.",
+        "A vacuum cleaner for cleaning offices or factories"
+       ]
+      ],
+      "a": 1,
+      "why": "전기드릴 = electric drill."
+     }
+    ]
+   },
+   {
+    "title": "Level 32 · Pictures (#181–185)",
+    "questions": [
+     {
+      "no": 181,
+      "img": "pic181",
+      "alt": "Picture for question 181",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "물건을 운반하는 손수레입니다.",
+        "A hand cart that carries goods"
+       ],
+       [
+        "금속을 자를 수 있는 절단기입니다.",
+        "A cutting machine that can cut metal"
+       ],
+       [
+        "금속에 구멍을 뚫는 전기드릴입니다.",
+        "An electric drill that makes holes in metal"
+       ],
+       [
+        "땅을 파고 흙을 뜰 수 있는 삽입니다.",
+        "A shovel that can dig and scoop soil"
+       ]
+      ],
+      "a": 1,
+      "why": "절단기 = cutting machine."
+     },
+     {
+      "no": 182,
+      "img": "pic182",
+      "alt": "Picture for question 182",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "높은 곳에서 일할 때 몸을 안전하게 지켜 주는 안전대입니다.",
+        "A safety harness that keeps you safe when working at height"
+       ],
+       [
+        "독가스 등 유독 물질이 있는 곳에서 일할 때 쓰는 방독면입니다.",
+        "A gas mask used where there is poison gas"
+       ],
+       [
+        "뜨거운 열이나 불길로부터 몸을 보호하기 위해 입는 방열복입니다.",
+        "A heat-resistant suit worn to protect the body from heat and flames"
+       ],
+       [
+        "추락 사고를 막고 지나다니는 사람의 안전을 위해 치는 안전망입니다.",
+        "A safety net set up to prevent falls and protect passers-by"
+       ]
+      ],
+      "a": 0,
+      "why": "안전대 = safety harness."
+     },
+     {
+      "no": 183,
+      "img": "pic183",
+      "alt": "Picture for question 183",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "삽을 이용하여 땅을 파고 있습니다.",
+        "Digging the ground with a shovel"
+       ],
+       [
+        "사다리를 이용하여 전선을 연결하고 있습니다.",
+        "Connecting electric wires using a ladder"
+       ],
+       [
+        "지게차를 이용하여 물건을 운반하고 있습니다.",
+        "Carrying goods using a forklift"
+       ],
+       [
+        "포크레인을 이용하여 파이프를 땅에 묻고 있습니다.",
+        "Burying a pipe in the ground using an excavator"
+       ]
+      ],
+      "a": 3,
+      "why": "포크레인 = excavator; 묻다 = to bury."
+     },
+     {
+      "no": 184,
+      "img": "pic184",
+      "alt": "Picture for question 184",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "고층 건물의 유리창을 닦고 있습니다.",
+        "Cleaning the windows of a high-rise"
+       ],
+       [
+        "땅을 파는 기초 공사를 하고 있습니다.",
+        "Doing foundation work by digging the ground"
+       ],
+       [
+        "건물의 인테리어 공사를 하고 있습니다.",
+        "Doing interior construction work in a building"
+       ],
+       [
+        "공장에서 자동차 부품을 만들고 있습니다.",
+        "Making car parts in a factory"
+       ]
+      ],
+      "a": 2,
+      "why": "인테리어 공사 = interior work."
+     },
+     {
+      "no": 185,
+      "img": "pic185",
+      "alt": "Picture for question 185",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "땅을 팔 때 쓰는 삽입니다.",
+        "A shovel used for digging"
+       ],
+       [
+        "바닥을 닦을 때 쓰는 걸레입니다.",
+        "A rag used to wipe the floor"
+       ],
+       [
+        "물건을 집을 때 쓰는 집게입니다.",
+        "Tongs used to pick up things"
+       ],
+       [
+        "음식을 먹을 때 쓰는 숟가락입니다.",
+        "A spoon used for eating"
+       ]
+      ],
+      "a": 2,
+      "why": "집게 = tongs."
+     }
+    ]
+   },
+   {
+    "title": "Level 33 · Pictures (#186–190)",
+    "questions": [
+     {
+      "no": 186,
+      "img": "pic186",
+      "alt": "Picture for question 186",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "물을 뿌릴 때 사용하는 도구입니다.",
+        "A tool used to spray water"
+       ],
+       [
+        "음식을 먹을 때 사용하는 도구입니다.",
+        "A tool used for eating"
+       ],
+       [
+        "물건을 집을 때 사용하는 도구입니다.",
+        "A tool used to pick up things"
+       ],
+       [
+        "유리창을 닦을 때 사용하는 도구입니다.",
+        "A tool used to wipe windows"
+       ]
+      ],
+      "a": 3,
+      "why": "유리창 = window glass."
+     },
+     {
+      "no": 187,
+      "img": "pic187",
+      "alt": "Picture for question 187",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "땅을 팔 때 사용하는 도구입니다.",
+        "A tool used for digging"
+       ],
+       [
+        "물을 뿌릴 때 사용하는 도구입니다.",
+        "A tool used to spray water"
+       ],
+       [
+        "물건을 집을 때 사용하는 도구입니다.",
+        "A tool used to pick things up"
+       ],
+       [
+        "음식을 먹을 때 사용하는 도구입니다.",
+        "A tool used for eating"
+       ]
+      ],
+      "a": 1,
+      "why": "뿌리다 = to spray / sprinkle."
+     },
+     {
+      "no": 188,
+      "img": "pic188",
+      "alt": "Picture for question 188",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "손을 씻을 때 사용하는 비누입니다.",
+        "Soap used to wash hands"
+       ],
+       [
+        "물건을 집을 때 사용하는 집게입니다.",
+        "Tongs used to pick things up"
+       ],
+       [
+        "물을 뿌릴 때 사용하는 물뿌리개입니다.",
+        "A watering can used to spray water"
+       ],
+       [
+        "그릇을 씻을 때 사용하는 수세미입니다.",
+        "A scouring pad used to wash dishes"
+       ]
+      ],
+      "a": 3,
+      "why": "수세미 = scouring pad."
+     },
+     {
+      "no": 189,
+      "img": "pic189",
+      "alt": "Picture for question 189",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "물건을 집을 때 사용하는 집게입니다.",
+        "Tongs used to pick things up"
+       ],
+       [
+        "물을 뿌릴 때 사용하는 물뿌리개입니다.",
+        "A watering can used to spray water"
+       ],
+       [
+        "입 안의 음식 찌꺼기를 없앨 수 있는 칫솔입니다.",
+        "A toothbrush that removes food bits in the mouth"
+       ],
+       [
+        "바닥을 문질러 때나 먼지를 없앨 수 있는 솔입니다.",
+        "A brush that scrubs the floor to remove dirt and dust"
+       ]
+      ],
+      "a": 3,
+      "why": "솔 = brush."
+     },
+     {
+      "no": 190,
+      "img": "pic190",
+      "alt": "Picture for question 190",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "이를 닦을 때 사용하는 칫솔입니다.",
+        "A toothbrush used to brush teeth"
+       ],
+       [
+        "물건을 집을 때 사용하는 집게입니다.",
+        "Tongs used to pick things up"
+       ],
+       [
+        "바닥을 문질러 때를 뺄 수 있는 솔입니다.",
+        "A brush that scrubs dirt off the floor"
+       ],
+       [
+        "땅을 파고 흙을 뜨는 데 사용하는 삽입니다.",
+        "A shovel used to dig and scoop soil"
+       ]
+      ],
+      "a": 3,
+      "why": "삽 = shovel."
+     }
+    ]
+   },
+   {
+    "title": "Level 34 · Pictures (#191–195)",
+    "questions": [
+     {
+      "no": 191,
+      "img": "pic191",
+      "alt": "Picture for question 191",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "나무를 베거나 자를 때 사용하는 톱입니다.",
+        "A saw for cutting wood"
+       ],
+       [
+        "전선이나 철사를 자를 때 사용하는 니퍼입니다.",
+        "Nippers for cutting wires"
+       ],
+       [
+        "나무에 못을 박거나 뺄 때 사용하는 장도리입니다.",
+        "A hammer for driving or removing nails"
+       ],
+       [
+        "볼트, 너트, 나사 등의 머리를 죄거나 풀 때 사용하는 스패너입니다.",
+        "A wrench for tightening or loosening bolts, nuts and screws"
+       ]
+      ],
+      "a": 3,
+      "why": "스패너 = wrench / spanner."
+     },
+     {
+      "no": 192,
+      "img": "pic192",
+      "alt": "Picture for question 192",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "못을 박을 때 사용하는 망치입니다.",
+        "A hammer for driving nails"
+       ],
+       [
+        "물건을 운반할 때 사용하는 손수레입니다.",
+        "A hand cart for carrying things"
+       ],
+       [
+        "페인트칠을 할 때 사용하는 페인트 붓입니다.",
+        "A paintbrush for painting"
+       ],
+       [
+        "높은 곳에 올라갈 때 사용하는 사다리입니다.",
+        "A ladder for climbing to high places"
+       ]
+      ],
+      "a": 2,
+      "why": "붓 = brush (for painting)."
+     },
+     {
+      "no": 193,
+      "img": "pic193",
+      "alt": "Picture for question 193",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "과일을 깎을 때 사용하는 칼입니다.",
+        "A knife for peeling fruit"
+       ],
+       [
+        "음식을 담을 때 사용하는 그릇입니다.",
+        "A bowl for holding food"
+       ],
+       [
+        "물건을 운반할 때 사용하는 손수레입니다.",
+        "A hand cart for carrying things"
+       ],
+       [
+        "물건의 무게를 잴 때 사용하는 저울입니다.",
+        "A scale for weighing things"
+       ]
+      ],
+      "a": 2,
+      "why": "손수레 = hand cart."
+     },
+     {
+      "no": 194,
+      "img": "pic194",
+      "alt": "Picture for question 194",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "물건을 묶을 수 있는 끈입니다.",
+        "A string that can tie things"
+       ],
+       [
+        "이를 닦을 수 있는 칫솔입니다.",
+        "A toothbrush for brushing teeth"
+       ],
+       [
+        "길이를 잴 수 있는 줄자입니다.",
+        "A tape measure for measuring length"
+       ],
+       [
+        "허리를 조일 수 있는 벨트입니다.",
+        "A belt that tightens the waist"
+       ]
+      ],
+      "a": 2,
+      "why": "줄자 = tape measure."
+     },
+     {
+      "no": 195,
+      "img": "pic195",
+      "alt": "Picture for question 195",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "땅을 팔 때 사용하는 삽입니다.",
+        "A shovel for digging"
+       ],
+       [
+        "옷을 걸 때 사용하는 옷걸이입니다.",
+        "A hanger for hanging clothes"
+       ],
+       [
+        "물건을 운반할 때 사용하는 손수레입니다.",
+        "A hand cart for carrying things"
+       ],
+       [
+        "높은 곳에 올라갈 때 사용하는 사다리입니다.",
+        "A ladder for climbing to high places"
+       ]
+      ],
+      "a": 3,
+      "why": "사다리 = ladder."
+     }
+    ]
+   },
+   {
+    "title": "Level 35 · Pictures (#196–200)",
+    "questions": [
+     {
+      "no": 196,
+      "img": "pic196",
+      "alt": "Picture for question 196",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "못을 박을 수 있는 망치입니다.",
+        "A hammer for driving nails"
+       ],
+       [
+        "계산을 할 수 있는 계산기입니다.",
+        "A calculator for calculating"
+       ],
+       [
+        "구멍을 뚫을 수 있는 송곳입니다.",
+        "An awl for making holes"
+       ],
+       [
+        "물건의 무게를 잴 수 있는 저울입니다.",
+        "A scale for weighing things"
+       ]
+      ],
+      "a": 3,
+      "why": "저울 = scale; 무게 = weight."
+     },
+     {
+      "no": 197,
+      "img": "pic197",
+      "alt": "Picture for question 197",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "불을 끌 때 사용하는 소화기입니다.",
+        "A fire extinguisher used to put out fires"
+       ],
+       [
+        "청소를 할 때 사용하는 빗자루입니다.",
+        "A broom used for cleaning"
+       ],
+       [
+        "옷을 만들 때 사용하는 재봉틀입니다.",
+        "A sewing machine used to make clothes"
+       ],
+       [
+        "물을 끓일 때 사용하는 주전자입니다.",
+        "A kettle used to boil water"
+       ]
+      ],
+      "a": 0,
+      "why": "소화기 = fire extinguisher."
+     },
+     {
+      "no": 198,
+      "img": "pic198",
+      "alt": "Picture for question 198",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "물건의 무게를 잴 때 사용하는 저울입니다.",
+        "A scale for weighing things"
+       ],
+       [
+        "높은 곳에 올라갈 때 사용하는 사다리입니다.",
+        "A ladder for climbing to high places"
+       ],
+       [
+        "물이나 가스를 보내는 데 사용하는 호스입니다.",
+        "A hose used to carry water or gas"
+       ],
+       [
+        "전선이나 철사를 자르는 데 사용하는 니퍼입니다.",
+        "Nippers used to cut wires"
+       ]
+      ],
+      "a": 2,
+      "why": "호스 = hose."
+     },
+     {
+      "no": 199,
+      "img": "pic199",
+      "alt": "Picture for question 199",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "물건을 집을 때 사용하는 집게입니다.",
+        "Tongs for picking things up"
+       ],
+       [
+        "물을 뿌릴 때 사용하는 물뿌리개입니다.",
+        "A watering can for spraying water"
+       ],
+       [
+        "물건의 무게를 잴 때 사용하는 저울입니다.",
+        "A scale for weighing things"
+       ],
+       [
+        "옷이나 가방 등을 만들 때 사용하는 재봉틀입니다.",
+        "A sewing machine for making clothes and bags"
+       ]
+      ],
+      "a": 3,
+      "why": "재봉틀 = sewing machine."
+     },
+     {
+      "no": 200,
+      "img": "pic200",
+      "alt": "Picture for question 200",
+      "q": "그림을 보고 맞는 문장을 고르십시오. (Choose the sentence that matches the picture.)",
+      "opts": [
+       [
+        "학교나 직장 등에서 개인의 물건을 넣어 두는 사물함입니다.",
+        "A locker for personal items at school or work"
+       ],
+       [
+        "지하철역 등에서 임시로 물건을 맡아 보관하는 보관함입니다.",
+        "A storage locker that temporarily holds things at a subway station"
+       ],
+       [
+        "물건을 만들거나 고칠 때 쓰는 도구를 넣어 두는 공구함입니다.",
+        "A toolbox holding tools for making or fixing things"
+       ],
+       [
+        "응급 시 필요한 약과 간단한 의료 도구를 넣어 두는 구급함입니다.",
+        "A first-aid kit holding medicine and simple medical tools for emergencies"
+       ]
+      ],
+      "a": 3,
+      "why": "구급함 = first-aid kit."
+     }
+    ]
+   },
+   {
+    "title": "Level 36 · Fill in the blank (#201–206)",
     "questions": [
      {
       "no": 201,
@@ -4371,7 +5529,7 @@
     ]
    },
    {
-    "title": "Level 29 · Fill in the blank (#207–212)",
+    "title": "Level 37 · Fill in the blank (#207–212)",
     "questions": [
      {
       "no": 207,
@@ -4520,7 +5678,7 @@
     ]
    },
    {
-    "title": "Level 30 · Fill in the blank (#213–218)",
+    "title": "Level 38 · Fill in the blank (#213–218)",
     "questions": [
      {
       "no": 213,
@@ -4669,7 +5827,7 @@
     ]
    },
    {
-    "title": "Level 31 · Fill in the blank (#219–224)",
+    "title": "Level 39 · Fill in the blank (#219–224)",
     "questions": [
      {
       "no": 219,
@@ -4818,7 +5976,7 @@
     ]
    },
    {
-    "title": "Level 32 · Fill in the blank (#225–230)",
+    "title": "Level 40 · Fill in the blank (#225–230)",
     "questions": [
      {
       "no": 225,
@@ -4967,7 +6125,7 @@
     ]
    },
    {
-    "title": "Level 33 · Fill in the blank (#231–236)",
+    "title": "Level 41 · Fill in the blank (#231–236)",
     "questions": [
      {
       "no": 231,
@@ -5116,7 +6274,7 @@
     ]
    },
    {
-    "title": "Level 34 · Fill in the blank (#237–242)",
+    "title": "Level 42 · Fill in the blank (#237–242)",
     "questions": [
      {
       "no": 237,
@@ -5261,6 +6419,1347 @@
       ],
       "a": 2,
       "why": "Today is Sunday; Saturday was yesterday = 어제."
+     }
+    ]
+   },
+   {
+    "title": "Level 43 · Fill in the blank (#243–248)",
+    "questions": [
+     {
+      "no": 243,
+      "q": "오늘은 우리 사무실의 ____이/가 고장 났습니다. 사무실 안이 너무 더워서 일을 할 수가 없었습니다.",
+      "opts": [
+       [
+        "냉장고",
+        "refrigerator"
+       ],
+       [
+        "에어컨",
+        "air conditioner"
+       ],
+       [
+        "세탁기",
+        "washing machine"
+       ],
+       [
+        "텔레비전",
+        "television"
+       ]
+      ],
+      "a": 1,
+      "why": "너무 더워서 (too hot) → the 에어컨 broke."
+     },
+     {
+      "no": 244,
+      "q": "외국에 나가려면 ____이/가 반드시 있어야 해요. 이것은 외국인의 신분증이거든요.",
+      "opts": [
+       [
+        "도장",
+        "seal (stamp)"
+       ],
+       [
+        "명함",
+        "business card"
+       ],
+       [
+        "여권",
+        "passport"
+       ],
+       [
+        "신용카드",
+        "credit card"
+       ]
+      ],
+      "a": 2,
+      "why": "To go abroad you need a 여권 (passport)."
+     },
+     {
+      "no": 245,
+      "q": "물건을 산 후에는 반드시 ____을/를 받으세요. 물건을 교환하거나 환불 받을 때 필요해요.",
+      "opts": [
+       [
+        "돈",
+        "money"
+       ],
+       [
+        "포장",
+        "packaging"
+       ],
+       [
+        "카드",
+        "card"
+       ],
+       [
+        "영수증",
+        "receipt"
+       ]
+      ],
+      "a": 3,
+      "why": "Needed for exchange or refund → 영수증 (receipt)."
+     },
+     {
+      "no": 246,
+      "q": "지금 인천행 ____이/가 들어오고 있습니다. 승객 여러분께서는 안전선 밖으로 물러나 주시기 바랍니다.",
+      "opts": [
+       [
+        "표",
+        "ticket"
+       ],
+       [
+        "열차",
+        "train"
+       ],
+       [
+        "여행",
+        "trip"
+       ],
+       [
+        "예매",
+        "advance booking"
+       ]
+      ],
+      "a": 1,
+      "why": "인천행 열차 = a train bound for Incheon."
+     },
+     {
+      "no": 247,
+      "q": "가: 무슨 ____을/를 사려고 해요?\n나: 운동할 때 입을 바지를 사려고 해요.",
+      "opts": [
+       [
+        "옷",
+        "clothes"
+       ],
+       [
+        "꽃",
+        "flower"
+       ],
+       [
+        "가방",
+        "bag"
+       ],
+       [
+        "모자",
+        "hat"
+       ]
+      ],
+      "a": 0,
+      "why": "Pants are 옷 (clothes)."
+     },
+     {
+      "no": 248,
+      "q": "가: 필리핀 가는 비행기 표를 예약하려고 하는데요.\n나: ____(으)로 하시겠어요? 편도로 하시겠어요?",
+      "opts": [
+       [
+        "예매",
+        "advance booking"
+       ],
+       [
+        "여행",
+        "trip"
+       ],
+       [
+        "왕복",
+        "round trip"
+       ],
+       [
+        "취소",
+        "cancellation"
+       ]
+      ],
+      "a": 2,
+      "why": "왕복 (round trip) vs 편도 (one way)."
+     }
+    ]
+   },
+   {
+    "title": "Level 44 · Fill in the blank (#249–254)",
+    "questions": [
+     {
+      "no": 249,
+      "q": "택시 ____이/가 비싸요. 그래서 저는 버스나 지하철을 타고 다녀요.",
+      "opts": [
+       [
+        "표",
+        "ticket"
+       ],
+       [
+        "잔돈",
+        "change"
+       ],
+       [
+        "현금",
+        "cash"
+       ],
+       [
+        "요금",
+        "fare"
+       ]
+      ],
+      "a": 3,
+      "why": "택시 요금 = taxi fare."
+     },
+     {
+      "no": 250,
+      "q": "가: 한국에서는 비가 오면 ____을/를 써요.\n나: 그래요? 우리나라에서는 비를 그냥 맞아요. 비가 자주 안 와서 반갑거든요.",
+      "opts": [
+       [
+        "구두",
+        "dress shoes"
+       ],
+       [
+        "바지",
+        "pants"
+       ],
+       [
+        "우산",
+        "umbrella"
+       ],
+       [
+        "치마",
+        "skirt"
+       ]
+      ],
+      "a": 2,
+      "why": "우산을 쓰다 = to use an umbrella."
+     },
+     {
+      "no": 251,
+      "q": "가: 편지를 보내려고 하는데 ____은/는 어디에 붙여요?\n나: 봉투 오른쪽 위에 붙이면 돼요.",
+      "opts": [
+       [
+        "우표",
+        "stamp"
+       ],
+       [
+        "수표",
+        "check"
+       ],
+       [
+        "지폐",
+        "banknote"
+       ],
+       [
+        "우체국",
+        "post office"
+       ]
+      ],
+      "a": 0,
+      "why": "You stick a 우표 (stamp) on the envelope."
+     },
+     {
+      "no": 252,
+      "q": "가: 무슨 ____을 좋아해요?\n나: 저는 축구를 제일 좋아해요.",
+      "opts": [
+       [
+        "계절",
+        "season"
+       ],
+       [
+        "색깔",
+        "color"
+       ],
+       [
+        "운동",
+        "sport"
+       ],
+       [
+        "음식",
+        "food"
+       ]
+      ],
+      "a": 2,
+      "why": "축구 (soccer) is a 운동 (sport)."
+     },
+     {
+      "no": 253,
+      "q": "가: 아줌마, 이 사과 얼마예요?\n나: 세 개에 4,000____이에요.",
+      "opts": [
+       [
+        "명",
+        "(counter: people)"
+       ],
+       [
+        "병",
+        "(counter: bottles)"
+       ],
+       [
+        "원",
+        "won"
+       ],
+       [
+        "장",
+        "(counter: sheets)"
+       ]
+      ],
+      "a": 2,
+      "why": "Prices use 원 (won)."
+     },
+     {
+      "no": 254,
+      "q": "우리 회사에서는 매달 25일에 ____을 줍니다. 그래서 우리는 모두 그날을 기다립니다.",
+      "opts": [
+       [
+        "벌금",
+        "fine"
+       ],
+       [
+        "월급",
+        "monthly salary"
+       ],
+       [
+        "잔돈",
+        "change"
+       ],
+       [
+        "세금",
+        "tax"
+       ]
+      ],
+      "a": 1,
+      "why": "월급 = monthly pay; everyone waits for payday."
+     }
+    ]
+   },
+   {
+    "title": "Level 45 · Fill in the blank (#255–260)",
+    "questions": [
+     {
+      "no": 255,
+      "q": "가: 이 집은 보증금 300만 원에 ____이/가 40만원입니다.\n나: 한 달에 40만원이요? 너무 비싸요. 다른 방은 없어요?",
+      "opts": [
+       [
+        "월세",
+        "monthly rent"
+       ],
+       [
+        "전세",
+        "key-money lease"
+       ],
+       [
+        "요금",
+        "fee"
+       ],
+       [
+        "차비",
+        "fare"
+       ]
+      ],
+      "a": 0,
+      "why": "한 달에 40만원 → 월세 (monthly rent)."
+     },
+     {
+      "no": 256,
+      "q": "저는 월급을 받으면 ____에 갑니다. 거기에서 고향에 돈도 보내고 저금도 합니다.",
+      "opts": [
+       [
+        "은행",
+        "bank"
+       ],
+       [
+        "식당",
+        "restaurant"
+       ],
+       [
+        "극장",
+        "theater"
+       ],
+       [
+        "공항",
+        "airport"
+       ]
+      ],
+      "a": 0,
+      "why": "Sending money home and saving → 은행 (bank)."
+     },
+     {
+      "no": 257,
+      "q": "가: 리아 씨는 무슨 ____을/를 잘 먹어요?\n나: 김치찌개도 잘 먹고 비빔밥도 좋아해요.",
+      "opts": [
+       [
+        "과자",
+        "snack"
+       ],
+       [
+        "후식",
+        "dessert"
+       ],
+       [
+        "식당",
+        "restaurant"
+       ],
+       [
+        "음식",
+        "food"
+       ]
+      ],
+      "a": 3,
+      "why": "김치찌개 and 비빔밥 are 음식 (food)."
+     },
+     {
+      "no": 258,
+      "q": "가: 이 ____에 앉아도 돼요?\n나: 네, 앉으세요.",
+      "opts": [
+       [
+        "의사",
+        "doctor"
+       ],
+       [
+        "의자",
+        "chair"
+       ],
+       [
+        "지갑",
+        "wallet"
+       ],
+       [
+        "장갑",
+        "gloves"
+       ]
+      ],
+      "a": 1,
+      "why": "You sit on an 의자 (chair)."
+     },
+     {
+      "no": 259,
+      "q": "가: 뭘 드시겠어요?\n나: 저는 불고기를 먹겠어요.\n가: 저도 불고기로 할게요. 여보세요, 여기 불고기 2 ____ 주세요.",
+      "opts": [
+       [
+        "명",
+        "(counter: people)"
+       ],
+       [
+        "병",
+        "(counter: bottles)"
+       ],
+       [
+        "인분",
+        "servings"
+       ],
+       [
+        "개월",
+        "months"
+       ]
+      ],
+      "a": 2,
+      "why": "인분 counts servings of food."
+     },
+     {
+      "no": 260,
+      "q": "저는 월요일부터 토요일까지 공장에서 일합니다. ____에는 집에서 쉽니다.",
+      "opts": [
+       [
+        "화요일",
+        "Tuesday"
+       ],
+       [
+        "수요일",
+        "Wednesday"
+       ],
+       [
+        "금요일",
+        "Friday"
+       ],
+       [
+        "일요일",
+        "Sunday"
+       ]
+      ],
+      "a": 3,
+      "why": "Works Monday–Saturday → rests on Sunday."
+     }
+    ]
+   },
+   {
+    "title": "Level 46 · Fill in the blank (#261–266)",
+    "questions": [
+     {
+      "no": 261,
+      "q": "가: 커피를 또 마셔요?\n나: 네, 커피를 좋아하거든요. 보통 하루에 여섯 ___ 마셔요.",
+      "opts": [
+       [
+        "잔",
+        "(counter: cups)"
+       ],
+       [
+        "장",
+        "(counter: sheets)"
+       ],
+       [
+        "시",
+        "o'clock"
+       ],
+       [
+        "살",
+        "years old"
+       ]
+      ],
+      "a": 0,
+      "why": "Cups of coffee → 잔."
+     },
+     {
+      "no": 262,
+      "q": "가: 이 서류 좀 복사해 주세요.\n나: 몇 ___ 복사해 드릴까요?",
+      "opts": [
+       [
+        "잔",
+        "(counter: cups)"
+       ],
+       [
+        "장",
+        "(counter: sheets)"
+       ],
+       [
+        "시",
+        "o'clock"
+       ],
+       [
+        "살",
+        "years old"
+       ]
+      ],
+      "a": 1,
+      "why": "Sheets of paper → 장."
+     },
+     {
+      "no": 263,
+      "q": "라면이나 국수는 ____(으)로 먹습니다.",
+      "opts": [
+       [
+        "칼",
+        "knife"
+       ],
+       [
+        "연필",
+        "pencil"
+       ],
+       [
+        "가위",
+        "scissors"
+       ],
+       [
+        "젓가락",
+        "chopsticks"
+       ]
+      ],
+      "a": 3,
+      "why": "Noodles are eaten with 젓가락 (chopsticks)."
+     },
+     {
+      "no": 264,
+      "q": "가: 여기서 시청에 어떻게 가요?\n나: 저기 편의점 앞에 ____이/가 있어요. 거기서 272번 버스를 타면 돼요.",
+      "opts": [
+       [
+        "공항",
+        "airport"
+       ],
+       [
+        "출입문",
+        "entrance"
+       ],
+       [
+        "정류장",
+        "bus stop"
+       ],
+       [
+        "교통카드",
+        "transit card"
+       ]
+      ],
+      "a": 2,
+      "why": "You take bus 272 at the 정류장 (bus stop)."
+     },
+     {
+      "no": 265,
+      "q": "회사 사람들은 월요일부터 금요일까지 일하고, ____에는 쉽니다.",
+      "opts": [
+       [
+        "주말",
+        "weekend"
+       ],
+       [
+        "월말",
+        "end of the month"
+       ],
+       [
+        "연말",
+        "end of the year"
+       ],
+       [
+        "기말",
+        "end of the term"
+       ]
+      ],
+      "a": 0,
+      "why": "Mon–Fri work → rest on the 주말 (weekend)."
+     },
+     {
+      "no": 266,
+      "q": "가: 여기에 ____을/를 해도 돼요?\n나: 아니요, 여기에 차를 세우면 안 돼요.",
+      "opts": [
+       [
+        "주문",
+        "order"
+       ],
+       [
+        "주차",
+        "parking"
+       ],
+       [
+        "세수",
+        "washing one's face"
+       ],
+       [
+        "세차",
+        "car wash"
+       ]
+      ],
+      "a": 1,
+      "why": "차를 세우다 = to park → 주차."
+     }
+    ]
+   },
+   {
+    "title": "Level 47 · Fill in the blank (#267–272)",
+    "questions": [
+     {
+      "no": 267,
+      "q": "가: 어떡하죠? 지하철에서 ____을/를 잃어버렸어요. 그 안에 현금하고 신용카드, 신분증도 들어 있는데….\n나: 빨리 분실물 센터에 가 보세요.",
+      "opts": [
+       [
+        "돈",
+        "money"
+       ],
+       [
+        "지갑",
+        "wallet"
+       ],
+       [
+        "휴지",
+        "tissue"
+       ],
+       [
+        "휴대전화",
+        "cell phone"
+       ]
+      ],
+      "a": 1,
+      "why": "Cash, cards, and ID were inside → 지갑 (wallet)."
+     },
+     {
+      "no": 268,
+      "q": "가: 회사에 어떻게 와요?\n나: 보통 ____을/를 타고 와요. 길도 안 막히고 빨라서 좋아요.",
+      "opts": [
+       [
+        "육교",
+        "pedestrian overpass"
+       ],
+       [
+        "지하도",
+        "underpass"
+       ],
+       [
+        "지하철",
+        "subway"
+       ],
+       [
+        "횡단보도",
+        "crosswalk"
+       ]
+      ],
+      "a": 2,
+      "why": "You ride (타다) the 지하철 (subway)."
+     },
+     {
+      "no": 269,
+      "q": "가: 영수 씨는 어떤 일을 하세요?\n나: 저는 공장에서 텔레비전을 만드는 일을 해요. 성한 씨는 ____이/가 뭐예요?\n가: 저는 요리사예요.",
+      "opts": [
+       [
+        "직업",
+        "occupation"
+       ],
+       [
+        "취미",
+        "hobby"
+       ],
+       [
+        "공장",
+        "factory"
+       ],
+       [
+        "주소",
+        "address"
+       ]
+      ],
+      "a": 0,
+      "why": "Asking what job someone has → 직업."
+     },
+     {
+      "no": 270,
+      "q": "가: 회사에 ____이 많아요?\n나: 네, 300명쯤 돼요.",
+      "opts": [
+       [
+        "직원",
+        "employee"
+       ],
+       [
+        "직업",
+        "occupation"
+       ],
+       [
+        "시간",
+        "time"
+       ],
+       [
+        "사무실",
+        "office"
+       ]
+      ],
+      "a": 0,
+      "why": "300 people → 직원 (employees)."
+     },
+     {
+      "no": 271,
+      "q": "가: 어제 서점에 가서 ____을 많이 샀어요?\n나: 네, 10권 샀어요.",
+      "opts": [
+       [
+        "약",
+        "medicine"
+       ],
+       [
+        "책",
+        "book"
+       ],
+       [
+        "옷",
+        "clothes"
+       ],
+       [
+        "과일",
+        "fruit"
+       ]
+      ],
+      "a": 1,
+      "why": "서점 (bookstore) + 권 (counter for books) → 책."
+     },
+     {
+      "no": 272,
+      "q": "가: 리키 씨는 ____이/가 뭐예요?\n나: 컴퓨터 게임을 좋아해요. 주말에 자주 집에서 게임을 해요.",
+      "opts": [
+       [
+        "이름",
+        "name"
+       ],
+       [
+        "취미",
+        "hobby"
+       ],
+       [
+        "나이",
+        "age"
+       ],
+       [
+        "성격",
+        "personality"
+       ]
+      ],
+      "a": 1,
+      "why": "Likes computer games → 취미 (hobby)."
+     }
+    ]
+   },
+   {
+    "title": "Level 48 · Fill in the blank (#273–278)",
+    "questions": [
+     {
+      "no": 273,
+      "q": "가: 영수 씨, 사무실이 어디에 있어요?\n나: 제 사무실은 국제빌딩 ____에 있어요.",
+      "opts": [
+       [
+        "10개",
+        "10 (items)"
+       ],
+       [
+        "10장",
+        "10 (sheets)"
+       ],
+       [
+        "10채",
+        "10 (houses)"
+       ],
+       [
+        "10층",
+        "10th floor"
+       ]
+      ],
+      "a": 3,
+      "why": "Floors of a building → 층."
+     },
+     {
+      "no": 274,
+      "q": "가: 이가 너무 아파서 음식을 잘 씹을 수가 없어요.\n나: 그럼 ____에 가 보세요.",
+      "opts": [
+       [
+        "안과",
+        "eye clinic"
+       ],
+       [
+        "내과",
+        "internal medicine"
+       ],
+       [
+        "치과",
+        "dental clinic"
+       ],
+       [
+        "외과",
+        "surgery"
+       ]
+      ],
+      "a": 2,
+      "why": "Tooth (이) pain → 치과 (dental clinic)."
+     },
+     {
+      "no": 275,
+      "q": "우리 회사는 월요일부터 금요일까지 일하고 ____과 일요일은 쉽니다.",
+      "opts": [
+       [
+        "화요일",
+        "Tuesday"
+       ],
+       [
+        "수요일",
+        "Wednesday"
+       ],
+       [
+        "목요일",
+        "Thursday"
+       ],
+       [
+        "토요일",
+        "Saturday"
+       ]
+      ],
+      "a": 3,
+      "why": "Mon–Fri work; rest on Saturday and Sunday."
+     },
+     {
+      "no": 276,
+      "q": "가: 신용카드로 계산해도 됩니까?\n나: 죄송합니다. 카드는 안 됩니다. ____으로 계산해 주십시오.",
+      "opts": [
+       [
+        "현금",
+        "cash"
+       ],
+       [
+        "도장",
+        "seal"
+       ],
+       [
+        "세금",
+        "tax"
+       ],
+       [
+        "영수증",
+        "receipt"
+       ]
+      ],
+      "a": 0,
+      "why": "No card → pay with 현금 (cash)."
+     },
+     {
+      "no": 277,
+      "q": "오늘은 월요일입니다. 내일은 ____입니다.",
+      "opts": [
+       [
+        "화요일",
+        "Tuesday"
+       ],
+       [
+        "수요일",
+        "Wednesday"
+       ],
+       [
+        "목요일",
+        "Thursday"
+       ],
+       [
+        "금요일",
+        "Friday"
+       ]
+      ],
+      "a": 0,
+      "why": "Tomorrow after Monday → 화요일."
+     },
+     {
+      "no": 278,
+      "q": "가: 달러를 한국 돈으로 바꾸고 싶어요. 어디로 가야 해요?\n나: ____은/는 은행에서 할 수 있어요. 은행에 가 보세요.",
+      "opts": [
+       [
+        "통장",
+        "bankbook"
+       ],
+       [
+        "송금",
+        "sending money"
+       ],
+       [
+        "환전",
+        "currency exchange"
+       ],
+       [
+        "편지",
+        "letter"
+       ]
+      ],
+      "a": 2,
+      "why": "Changing dollars to won → 환전."
+     }
+    ]
+   },
+   {
+    "title": "Level 49 · Fill in the blank (#279–284)",
+    "questions": [
+     {
+      "no": 279,
+      "q": "가: 오늘 저녁에 바빠요? 같이 술 한잔해요.\n나: 미안해요. 오늘은 ____이 있어요. 회사 사람들하고 같이 저녁을 먹어야 해요.",
+      "opts": [
+       [
+        "월급",
+        "salary"
+       ],
+       [
+        "회식",
+        "company dinner"
+       ],
+       [
+        "출근",
+        "going to work"
+       ],
+       [
+        "퇴근",
+        "leaving work"
+       ]
+      ],
+      "a": 1,
+      "why": "Dinner with coworkers → 회식."
+     },
+     {
+      "no": 280,
+      "q": "가: 잠깐만요! 빨간 불이에요. 지금 ____을/를 건너면 안 돼요.\n나: 미안해요. 못 봤어요.",
+      "opts": [
+       [
+        "계단",
+        "stairs"
+       ],
+       [
+        "신호등",
+        "traffic light"
+       ],
+       [
+        "지하도",
+        "underpass"
+       ],
+       [
+        "횡단보도",
+        "crosswalk"
+       ]
+      ],
+      "a": 3,
+      "why": "You cross (건너다) a 횡단보도 (crosswalk)."
+     },
+     {
+      "no": 281,
+      "q": "가: 중국대사관에 가려고 하는데요. 길 좀 ____ 주시겠어요?\n나: 미안해요. 저도 길을 잘 몰라요.",
+      "opts": [
+       [
+        "걸어",
+        "(by) walking"
+       ],
+       [
+        "세워",
+        "(have) stopped"
+       ],
+       [
+        "건너",
+        "cross"
+       ],
+       [
+        "가르쳐",
+        "teach or tell"
+       ]
+      ],
+      "a": 3,
+      "why": "길을 가르쳐 주다 = to show / tell the way."
+     },
+     {
+      "no": 282,
+      "q": "가: 영희 씨, 오늘 비가 올 것 같아요. 이 우산을 ____.\n나: 고마워요.",
+      "opts": [
+       [
+        "가져가세요",
+        "take (it with you)"
+       ],
+       [
+        "내려가세요",
+        "go down"
+       ],
+       [
+        "데려가세요",
+        "take (a person)"
+       ],
+       [
+        "올라가세요",
+        "go up"
+       ]
+      ],
+      "a": 0,
+      "why": "가져가다 = to take a thing along."
+     },
+     {
+      "no": 283,
+      "q": "이번 역은 신설동, 신설동역입니다. 내리실 문은 왼쪽입니다. 성수, 잠실이나 왕십리 방면으로 가실 손님은 이번 역에서 2호선으로 ____ 바랍니다.",
+      "opts": [
+       [
+        "보내시기",
+        "sending"
+       ],
+       [
+        "닫으시기",
+        "closing"
+       ],
+       [
+        "갈아타시기",
+        "transferring"
+       ],
+       [
+        "돌아오시기",
+        "returning"
+       ]
+      ],
+      "a": 2,
+      "why": "갈아타다 = to transfer (lines)."
+     },
+     {
+      "no": 284,
+      "q": "가: 이태원에 가려면 어디에서 버스를 타야 됩니까?\n나: 저 앞 횡단보도에서 길을 ____ 오른쪽으로 가세요.",
+      "opts": [
+       [
+        "세워서",
+        "stopping"
+       ],
+       [
+        "내려서",
+        "getting off"
+       ],
+       [
+        "건너서",
+        "crossing"
+       ],
+       [
+        "걸려서",
+        "being caught"
+       ]
+      ],
+      "a": 2,
+      "why": "길을 건너다 = to cross the street."
+     }
+    ]
+   },
+   {
+    "title": "Level 50 · Fill in the blank (#285–290)",
+    "questions": [
+     {
+      "no": 285,
+      "q": "가: 지금 김 과장님 자리에 안 계신데요. 메모를 남겨 드릴까요?\n나: 아니요. 제가 나중에 다시 전화 ____.",
+      "opts": [
+       [
+        "걸겠습니다",
+        "I will make (a call)"
+       ],
+       [
+        "오겠습니다",
+        "I will come"
+       ],
+       [
+        "듣겠습니다",
+        "I will listen"
+       ],
+       [
+        "바꾸겠습니다",
+        "I will change"
+       ]
+      ],
+      "a": 0,
+      "why": "전화를 걸다 = to make a phone call."
+     },
+     {
+      "no": 286,
+      "q": "가: 소포를 보내려고 하는데요. 인도네시아까지 얼마나 ____?\n나: 일주일 정도면 도착합니다.",
+      "opts": [
+       [
+        "올까요",
+        "will it come"
+       ],
+       [
+        "걸릴까요",
+        "will it take"
+       ],
+       [
+        "보낼까요",
+        "shall I send"
+       ],
+       [
+        "기다릴까요",
+        "shall I wait"
+       ]
+      ],
+      "a": 1,
+      "why": "얼마나 걸리다 = how long does it take."
+     },
+     {
+      "no": 287,
+      "q": "가: 현철 씨는 언제 ____ 거예요?\n나: 저는 벌써 했어요. 딸이 둘이나 있는데요.",
+      "opts": [
+       [
+        "취직할",
+        "will get a job"
+       ],
+       [
+        "결혼할",
+        "will get married"
+       ],
+       [
+        "이사할",
+        "will move"
+       ],
+       [
+        "출근할",
+        "will go to work"
+       ]
+      ],
+      "a": 1,
+      "why": "Already has two daughters → 결혼 (marriage)."
+     },
+     {
+      "no": 288,
+      "q": "가: 이 근처에 깨끗한 집 있어요? 집을 좀 ____ 있는데요.\n나: 네, 지하철역 근처에 좋은 집이 하나 있어요.",
+      "opts": [
+       [
+        "살고",
+        "living"
+       ],
+       [
+        "짓고",
+        "building"
+       ],
+       [
+        "팔고",
+        "selling"
+       ],
+       [
+        "구하고",
+        "looking for"
+       ]
+      ],
+      "a": 3,
+      "why": "집을 구하다 = to look for a house."
+     },
+     {
+      "no": 289,
+      "q": "가: (따르릉~) 여보세요!\n나: 거기 이영수 선생님 댁이지요? 선생님 계십니까?\n가: 네, 잠깐만 ____.",
+      "opts": [
+       [
+        "만나세요",
+        "please meet"
+       ],
+       [
+        "들으세요",
+        "please listen"
+       ],
+       [
+        "기다리세요",
+        "please wait"
+       ],
+       [
+        "가르치세요",
+        "please teach"
+       ]
+      ],
+      "a": 2,
+      "why": "잠깐만 기다리세요 = please wait a moment."
+     },
+     {
+      "no": 290,
+      "q": "가: 이 티셔츠 얼마예요?\n나: 삼만 원이에요.\n가: 너무 비싸요. 좀 ____ 주세요.",
+      "opts": [
+       [
+        "꺼",
+        "turn off"
+       ],
+       [
+        "싸",
+        "cheap"
+       ],
+       [
+        "만나",
+        "meet"
+       ],
+       [
+        "깎아",
+        "give a discount"
+       ]
+      ],
+      "a": 3,
+      "why": "깎아 주세요 = please give me a discount."
+     }
+    ]
+   },
+   {
+    "title": "Level 51 · Fill in the blank (#291–296)",
+    "questions": [
+     {
+      "no": 291,
+      "q": "일을 다 끝낸 후에는 반드시 불을 ____ 나가세요.",
+      "opts": [
+       [
+        "끄고",
+        "turning off"
+       ],
+       [
+        "닫고",
+        "closing"
+       ],
+       [
+        "쉬고",
+        "resting"
+       ],
+       [
+        "하고",
+        "doing"
+       ]
+      ],
+      "a": 0,
+      "why": "불을 끄다 = to turn off the light."
+     },
+     {
+      "no": 292,
+      "q": "가: 퇴근 안 하세요?\n나: 네. 오늘 일을 다 못 ____ 좀 더 일해야 돼요. 먼저 들어가세요.",
+      "opts": [
+       [
+        "끝내서",
+        "finishing"
+       ],
+       [
+        "받아서",
+        "receiving"
+       ],
+       [
+        "시작해서",
+        "starting"
+       ],
+       [
+        "만들어서",
+        "making"
+       ]
+      ],
+      "a": 0,
+      "why": "일을 끝내다 = to finish work."
+     },
+     {
+      "no": 293,
+      "q": "가: 민수 씨는 한 달에 가스비가 얼마나 ____?\n나: 저는 보통 만 원쯤 내요. 집에서 거의 요리를 안 하거든요.",
+      "opts": [
+       [
+        "걸려요",
+        "takes (time)"
+       ],
+       [
+        "먹어요",
+        "eats"
+       ],
+       [
+        "나와요",
+        "comes out (is charged)"
+       ],
+       [
+        "내려요",
+        "goes down"
+       ]
+      ],
+      "a": 2,
+      "why": "가스비가 나오다 = the gas bill comes to…"
+     },
+     {
+      "no": 294,
+      "q": "가: 냉장고가 고장이 ____ 것 같아요. 냉장고 안에 있는 물이 시원하지 않아요.\n나: 그래요? 수리 센터에 전화를 해야겠네요.",
+      "opts": [
+       [
+        "간",
+        "gone"
+       ],
+       [
+        "한",
+        "did"
+       ],
+       [
+        "난",
+        "occurred"
+       ],
+       [
+        "된",
+        "became"
+       ]
+      ],
+      "a": 2,
+      "why": "고장이 나다 = to break down."
+     },
+     {
+      "no": 295,
+      "q": "요즘은 음식물 쓰레기 때문에 환경오염이 심각합니다. 음식을 ____ 말고 다 드십시오.",
+      "opts": [
+       [
+        "사지",
+        "buying"
+       ],
+       [
+        "먹지",
+        "eating"
+       ],
+       [
+        "남기지",
+        "leaving behind"
+       ],
+       [
+        "끝내지",
+        "finishing"
+       ]
+      ],
+      "a": 2,
+      "why": "남기지 말고 = don't leave (food) uneaten."
+     },
+     {
+      "no": 296,
+      "q": "이번 역은 종로 3가, 종로 3가역입니다. 이번 역은 열차와 승강장 사이가 넓습니다. ____ 때 발이 빠질 염려가 있으니 조심하시기 바랍니다.",
+      "opts": [
+       [
+        "내실",
+        "(honorific) to pay"
+       ],
+       [
+        "닦으실",
+        "(honorific) to wipe"
+       ],
+       [
+        "내리실",
+        "(honorific) to get off"
+       ],
+       [
+        "신으실",
+        "(honorific) to wear"
+       ]
+      ],
+      "a": 2,
+      "why": "내리다 = to get off; mind the gap when getting off."
      }
     ]
    }
